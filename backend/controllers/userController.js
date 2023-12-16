@@ -295,7 +295,7 @@ const loadCategoryDetails = asyncHandler(async (req, res) => {
 
 const loadProfile = asyncHandler(async (req, res) => {
   const userId = req.user._id;
-
+console.log('req.comming',userId)
   const myProfile = req.user;
   if (myProfile) {
     res.status(200).json({ myProfile });
