@@ -42,7 +42,7 @@ const server = app.listen(port, () => {
 const io = new Server(server, {
   pingTimeout: 1000,
   cors: {
-    origin: 'http://skillsync.website',
+    origin: ['http://www.skillsync.website/api','http://skillsync.website/api'],
   },
 });
 
