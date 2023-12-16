@@ -88,7 +88,7 @@ const logoutUser = asyncHandler(async (req, res) => {
   //   httpOnly: true,
   //   expires: new Date(0),
   // });
-  
+  console.log('res comming',req)
   res.status(200).json({ message: "User Logged Out" });
 });
 const verifyEmail = asyncHandler(async (req, res) => {
