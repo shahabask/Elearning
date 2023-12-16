@@ -32,14 +32,14 @@ function UserLogin() {
         console.log()
     }
   },[formErrors])
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  const submitHandler = async () => {
+
         setFormErrors(validate(email,password))
 
        
     try {
       const res = await login({ email,password }).unwrap();
-     console.log('res',res)
+
       dispatch(setCredentials({ ...res }));
       navigate('/');
     } catch (err) {
