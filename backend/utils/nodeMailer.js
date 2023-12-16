@@ -3,18 +3,18 @@ import nodemailer from 'nodemailer';
 const sendResetMail = (name, email, token) => {
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.ETHERIALHOST,
-      port: process.env.ETHERIALPORT,
+      host: 'smtp.gmail.com',
+      port: 587,
       secure: false,
       requireTLS: true,
       auth: {
-        user: process.env.ETHERILAUSERID,
-        pass: process.env.ETHERIALPASSWORD
+        user: 'codept100@gmail.com',
+        pass: 'meuxsoapsuqstgsi'
       }
     });
 
     const mailOptions = {
-      from: process.env.FROMMAIL, 
+      from: 'codept100@gmail.com', 
       to: 'codept100@gmail.com', // You should use the provided email, not a hardcoded one
       subject: "Reset your password",
       text: "Hello",

@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import Admin from "../models/adminModel.js";
-const secret = process.env.JWT_SECRET;
+const secret = 1234;
 
 
 const adminauthcheck =  async (req, res, next) => {
@@ -15,7 +15,7 @@ const adminauthcheck =  async (req, res, next) => {
       const tokenWithoutBearer = token.replace("Bearer ", "");
 
       // Verify the token
-      const decoded = jwt.verify(tokenWithoutBearer, process.env.JWT_SECRET);
+      const decoded = jwt.verify(tokenWithoutBearer, 1234);
 
       // Fetch user details and attach to the request
       req.user = await Admin.findById(decoded.adminId).select('-password');

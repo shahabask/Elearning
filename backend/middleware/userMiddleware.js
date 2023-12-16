@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
-const secret = process.env.JWT_SECRET;
+const secret = 1234;
 
 
 const authcheck =  async (req, res, next) => {
@@ -15,7 +15,7 @@ const authcheck =  async (req, res, next) => {
       const tokenWithoutBearer = token.replace("Bearer ", "");
 
       // Verify the token
-      const decoded = jwt.verify(tokenWithoutBearer, process.env.JWT_SECRET);
+      const decoded = jwt.verify(tokenWithoutBearer, 1234);
 
       // Fetch user details and attach to the request
       req.user = await User.findById(decoded.userId).select('-password');

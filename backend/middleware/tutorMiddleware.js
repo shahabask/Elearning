@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import Tutor from "../models/tutorModel.js";
-const secret = process.env.JWT_SECRET;
+const secret = 1234;
 
 
 const tutorauthcheck =  async (req, res, next) => {
@@ -12,7 +12,7 @@ const tutorauthcheck =  async (req, res, next) => {
       // Remove the "Bearer " prefix from the token (if present)
       const tokenWithoutBearer = token.replace("Bearer ", "");
       
-      const decoded = jwt.verify(tokenWithoutBearer, process.env.JWT_SECRET);
+      const decoded = jwt.verify(tokenWithoutBearer, 1234);
       
 
       // Fetch user details and attach to the request

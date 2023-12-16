@@ -63,7 +63,7 @@ const registerTutor = asyncHandler(async (req, res) => {
 const tutorDetails = asyncHandler(async (req, res) => {
   const token = req.query.token;
   try {
-    const user = await jwt.verify(token, process.env.JWT_SECRET);
+    const user = await jwt.verify(token, 1234);
 
     const isBlocked = await Tutor.findOne({ _id: user.tutorId }).select(
       "isBlocked"
