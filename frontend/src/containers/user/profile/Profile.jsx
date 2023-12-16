@@ -20,11 +20,13 @@ export default function Profile() {
    const [subcategories,setSubcategories]=useState('')
 
   useEffect(()=>{
+    console.log('profile load head')
   fetchUser()
  
   },[])
   const fetchUser=async()=>{
    try {
+    console.log('profile load')
      const response=await axiosInstance.get('/loadProfile')
    setUserData(response.data.myProfile)
    console.log('myProfile',response.data.myProfile.sub)
