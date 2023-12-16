@@ -40,10 +40,11 @@ function UserLogin() {
        
     try {
       const res = await login({ email,password }).unwrap();
-
+       console.log('request came')
       dispatch(setCredentials({ ...res }));
-     
+       console.log('res',res)
       navigate('/');
+      console.log('completed')
     } catch (err) {
 
       toast.error(err?.data|| err?.error);
