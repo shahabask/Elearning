@@ -1,0 +1,27 @@
+.form_container{
+    width: 30%;
+    
+}
+/* .login-form{
+    background-color: #94b991b3;
+} */
+@media screen and (max-width: 1000px){
+    .form_container{
+        width: 45%;
+    }
+
+}
+
+
+@media screen and (max-width: 700px){
+    .form_container{
+        width: 65%;
+    }
+
+}
+.background-image {
+    /* background-image: url('public/images/From Briefing to Experience, Designing Today’s Customer Experience Center.jpeg'); Replace 'path/to/your/image.jpg' with the actual path to your image */
+    /* background-size: cover; Adjust as needed */
+    background-repeat: no-repeat; /* Adjust as needed */
+    /* You can add more background properties here as per your requirements */
+  }

@@ -1,0 +1,12 @@
+
+.form_container {
+    width: 30%;
+    border: 1px solid black;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Add your desired shadow values here */
+}
+.background-image {
+    /* background-image: url('public/images/From Briefing to Experience, Designing Today’s Customer Experience Center.jpeg'); Replace 'path/to/your/image.jpg' with the actual path to your image */
+    /* background-size: cover; */
+    background-repeat: no-repeat; /* Adjust as needed */
+    /* You can add more background properties here as per your requirements */
+  }

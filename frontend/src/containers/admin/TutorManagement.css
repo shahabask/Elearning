@@ -1,0 +1,46 @@
+/* UserManagement.css */
+
+.data-grid-container {
+    height: 600px;
+    width: 100%;
+    padding-top: 70px;
+    padding-left: 30px;
+    padding-right: 100px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .data-grid-container {
+        height: 526px;
+        padding-left: 220px;
+        padding-right: 60px;
+    }
+  }  @media screen and (max-width: 1000px) {
+    .data-grid-container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+  
+  .custom-button-inactive {
+    background-color: #e49438c8; /* Change this to your desired background color */
+    border: none;
+    color: white; /* Change this to your desired text color */
+    padding: 3px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .custom-button-active {
+    background-color: rgb(180, 180, 244); /* Change this to your desired background color */
+    border: none;
+    color: white; /* Change this to your desired text color */
+    padding: 3px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .custom-button:hover {
+    background-color: #0056
+  }
