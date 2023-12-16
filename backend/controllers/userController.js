@@ -32,10 +32,9 @@ const checkSubscriptionExpiry=asyncHandler(async (req, res) => {
   }
 })
 
+  cron.schedule('0 0 * * *',checkSubscriptionExpiry)
+
   
-
-
-cron.schedule('0 0 * * *',checkSubscriptionExpiry)
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 

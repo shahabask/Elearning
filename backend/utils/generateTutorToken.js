@@ -1,7 +1,7 @@
 import Jwt from "jsonwebtoken";
 
 const generateTutorToken =(res,tutorId)=>{
- const token =Jwt.sign({tutorId},1234,{expiresIn:'30d'})
+ const token =Jwt.sign({tutorId},'1234',{expiresIn:'30d'})
 
 //  res.cookie('tutorJwt',token,{
 //     httpOnly:true,

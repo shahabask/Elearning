@@ -1,7 +1,7 @@
 import Jwt from "jsonwebtoken";
 
 const generateAdminToken =(res,adminId)=>{
- const token =Jwt.sign({adminId},1234,{expiresIn:'30d'})
+ const token =Jwt.sign({adminId},'1234',{expiresIn:'30d'})
 
 //  res.cookie('adminJwt',token,{
 //     httpOnly:true,
