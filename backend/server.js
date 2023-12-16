@@ -47,7 +47,7 @@ const server=app.listen(port,()=>{console.log('server is running')})
 const io=new Server(server,{
     pingTimeout:1000,
     cors:{
-        origin:'http://3.111.231.253:5000',
+        origin:'http://skillsync.website',
     },
 })
 

@@ -42,7 +42,7 @@ const Navbar = () => {
   const logoutFunction = async () => {
     try {
       const res = await axiosInstance.post('/logout');
-      console.log('logged out')
+    
       dispatch(logout());
       navigate('/login');
     } catch (error) {
