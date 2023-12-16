@@ -33,8 +33,8 @@ function UserLogin() {
         console.log()
     }
   },[formErrors])
-  const submitHandler = async () => {
-
+  const submitHandler = async (e) => {
+    e.preventDefault();
         setFormErrors(validate(email,password))
 
        

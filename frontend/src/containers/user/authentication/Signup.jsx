@@ -41,7 +41,7 @@ useEffect(() => {
     e.preventDefault();
         setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
        setIsSubmit(true)
-   console.log(formErrors)
+
        if (Object.keys(formErrors).length === 0){
 
     
