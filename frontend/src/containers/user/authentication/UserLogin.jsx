@@ -23,7 +23,7 @@ function UserLogin() {
   useEffect(() => {
 
     if (userInfo) {
-      console.log(userInfo)
+    
       navigate("/");
     }
   },[navigate,userInfo]); 
@@ -42,7 +42,7 @@ function UserLogin() {
       const res = await login({ email,password }).unwrap();
 
       dispatch(setCredentials({ ...res }));
-      console.log('res',res)
+     
       navigate('/');
     } catch (err) {
 
