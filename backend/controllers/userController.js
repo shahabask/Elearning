@@ -84,10 +84,10 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const logoutUser = asyncHandler(async (req, res) => {
-  res.cookie("jwt", "", {
-    httpOnly: true,
-    expires: new Date(0),
-  });
+  // res.cookie("jwt", "", {
+  //   httpOnly: true,
+  //   expires: new Date(0),
+  // });
   res.status(200).json({ message: "User Logged Out" });
 });
 const verifyEmail = asyncHandler(async (req, res) => {
