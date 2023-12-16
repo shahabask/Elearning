@@ -298,6 +298,7 @@ const loadProfile = asyncHandler(async (req, res) => {
 console.log('req.comming',userId)
   const myProfile = req.user;
   if (myProfile) {
+    console.log('jsfoje')
     res.status(200).json({ myProfile });
   } else {
     res.status(500).json(`can't get the user`);
