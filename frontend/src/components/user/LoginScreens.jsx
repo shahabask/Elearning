@@ -1,17 +1,15 @@
-import { useEffect } from "react"
-import { Outlet } from "react-router-dom"
-import axiosInstance from "../../containers/utils/axios"
 
-function LoginScreens() {
+  import { Outlet } from "react-router-dom"
 
-  // useEffect(async()=>{
-  //   const user=await axiosInstance.get('/userDetails')
-  // },[])
-  return (
-    <>
-    <Outlet/>
-    </>
-  )
-}
 
-export default LoginScreens
+  function LoginScreens() {
+
+    
+    return (
+      <>
+      <Outlet/>
+      </>
+    )
+  }
+
+  export default LoginScreens

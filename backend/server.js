@@ -31,11 +31,16 @@ app.use('/api/admin',adminRoutes)
 
 const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(path.join(__dirname, 'frontend/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'frontend/dist', 'index.html'));
 });
+
+// console.log('__dirname:', __dirname);
+// console.log('Static Files Path:', path.join(__dirname, 'frontend/dist'));
+// console.log('index.html Path:', path.join(__dirname, 'frontend/dist', 'index.html'));
+
 
 const server=app.listen(port,()=>{console.log('server is running')})
 

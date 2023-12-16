@@ -64,7 +64,7 @@ function UpgradePlan() {
 
   const {currentPlan}=useParams()
     const [plans,setPlans]=useState([])
-    const {userInfo}=useSelector((state)=>state.auth)
+    const {userInfo}=useSelector((state)=>state?.auth)
     useEffect(()=>{
        
       fetchPlans()

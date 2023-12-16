@@ -21,7 +21,7 @@ function TutorLogin() {
 
   useEffect(() => {
     if (tutorInfo) {
-      navigate("/tutor/dashboard");
+      navigate("/tutor");
     }
   }, [navigate, tutorInfo]);
 

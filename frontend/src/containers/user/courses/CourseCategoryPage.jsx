@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Category from "./Category";
 import CourseCard from "./Course";
 import axiosInstance from "../../utils/axios";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function CourseCategoryPage() {
   const [coursesData, setCoursesData] = useState([]);
@@ -14,9 +16,17 @@ function CourseCategoryPage() {
   const [categoriesData, setCategoriesData] = useState([]);
   const [currentCategoryPage, setCurrentCategoryPage] = useState(1);
   const [sortOrder, setSortOrder] = useState("AZ");
+  const {userInfo}=useSelector((state)=>state.auth)
+
+  const navigate=useNavigate()
 
   useEffect(() => {
-    fetchData();
+    if(userInfo){
+
+      fetchData();
+    }else{
+      navigate("/login")
+    }
   }, []);
 
   const fetchData = async () => {

@@ -2,23 +2,30 @@ import React, { useEffect, useState } from "react";
 import axiosInstance from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
 import socket from "../../utils/socket";
+import { useSelector } from "react-redux";
 // const socket =io.connect('http://localhost:5001')
 
 
 function Lives() {
   const [liveSessions, setLiveSessions] = useState([]);
   //  const [liveUpdated,setLiveUpdated]=useState(false)
-  
-  const navigate = useNavigate();
+  const {userInfo}=useSelector((state)=>state.auth)
+
+  const navigate=useNavigate()
 
 
 
 useEffect(()=>{
-  fetchLiveDetails()
-  socket.on('track_live',()=>{
+  if(userInfo){
+
     fetchLiveDetails()
-            // setLiveUpdated(!liveUpdated)
-          })
+    socket.on('track_live',()=>{
+      fetchLiveDetails()
+              // setLiveUpdated(!liveUpdated)
+            })
+  }else{
+    navigate('/login')
+  }
 
          
 },[socket])

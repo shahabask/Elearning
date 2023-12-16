@@ -66,11 +66,15 @@ const [subscription,setSubscription]=useState([])
 const [isSubscriptionActive,setSubscriptionActive]=useState(false)
 const [currentPlan,setCurrentPlan]=useState('')
 const [endDate,setEndDate]=useState(null)
-  const {userInfo}=useSelector((state)=>state.auth)
+  const {userInfo}=useSelector((state)=>state?.auth)
   const navigate=useNavigate()
   useEffect(()=>{
-     
-    fetchPlans()
+     if(userInfo){
+
+       fetchPlans()
+     }else{
+      navigate('/login')
+     }
   // console.log(currentPlan,'currentPlan')
   },[])
  const [plans,setPlans]=useState([])

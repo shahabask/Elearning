@@ -25,7 +25,7 @@ const [tutorRegister]=useTutorRegisterMutation()
 const {tutorInfo}=useSelector((state)=>state.tutorAuth)
   useEffect(() => {
     if (tutorInfo){
-      navigate("/tutor/dashboard")
+      navigate("/tutor")
     }
   }, [navigate, tutorInfo]);
 
