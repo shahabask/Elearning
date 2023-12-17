@@ -15,7 +15,7 @@ import path from 'path'
 import { loadLiveDetails} from '../controllers/userController.js';
 const storage = multer.diskStorage({
 destination: (req, file, cb) => {
-  cb(null, 'backend/public/images');
+  cb(null, 'public/images');
   
 },
 filename: (req, file, cb) => {
@@ -24,7 +24,7 @@ filename: (req, file, cb) => {
 },
 });
 const thumbnailStorage = multer.diskStorage({
-  destination: 'backend/public/thumbnails', // Adjust the destination path for thumbnail uploads
+  destination: 'public/thumbnails', // Adjust the destination path for thumbnail uploads
   filename: (req, file, callback) => {
     // Append '_thumbnail' to the original filename for thumbnails
     const thumbnailName = file.originalname.replace(path.extname(file.originalname), '_thumbnail.jpg');
@@ -33,7 +33,7 @@ const thumbnailStorage = multer.diskStorage({
 });
 const videoStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'backend/public/videos');
+    cb(null, 'public/videos');
     
   },
   

@@ -196,7 +196,7 @@ const loadCourseData = asyncHandler(async (req, res) => {
 
 const addCourse = asyncHandler(async (req, res) => {
   const { course, category, subCategory, description } = req.body;
-  const imagePath = req.file.path;
+  const imagePath = req.file.filename;
 
   const categoryDetails = await Category.findOne({ categoryName: category });
 

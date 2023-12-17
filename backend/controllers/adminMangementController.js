@@ -53,7 +53,7 @@ const loadCategory = asyncHandler(async (req, res) => {
 
 const addCategory = asyncHandler(async (req, res) => {
   const { categoryName, subCategories } = req.body; // Assuming categoryName is sent as part of the form data
-  const imagePath = req.file.path;
+  const imagePath = req.file.filename;
 
   
   const checkIdentical = await Category.findOne({ categoryName: categoryName });
