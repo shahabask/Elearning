@@ -16,8 +16,9 @@ function EditUser({ userData }) {
       selectedImage instanceof File
         ? selectedImage
         : selectedImage
-            .replace("https://www.skillsync.website/images/", "")
-            .replace("backend\\public\\images\\", "");
+        .replace("https://www.skillsync.website/images/", "")
+        .replace("backend/public/images/", "")
+        .replace(/\\/g, "/"); 
     const updatedUserInfo = {
       firstName,
       secondName,
@@ -26,6 +27,7 @@ function EditUser({ userData }) {
     };
 
     try {
+      
       const response = await axiosInstance.post(
         "/updateProfile",
         updatedUserInfo,
