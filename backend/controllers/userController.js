@@ -310,8 +310,8 @@ const updateProfile = asyncHandler(async (req, res) => {
   const userId = req.user._id;
   const { firstName, secondName, phone, image } = req.body;
   console.log(req.file,'path')
-  let imagePath = req?.file?.path;
-  imagePath = imagePath ? imagePath : `backend\\public\\images\\${image}`;
+  let imagePath = req?.file?.filename;
+  imagePath = imagePath ? imagePath : `${image}`;
 
   const updateUser = await User.updateOne(
     { _id: userId },
