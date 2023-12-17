@@ -50,7 +50,7 @@ function   LiveManagement() {
       const status='Not started'
       const response=await axiosInstance.get(`/loadLiveDetails/${status}`)
         setLiveDetails(response.data.lives)
-        console.log(response.data)
+        
         setSubjects(response.data?.subCategories[0]?.specification)
         
     }catch(error){

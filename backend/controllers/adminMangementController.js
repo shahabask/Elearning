@@ -268,7 +268,7 @@ const loadDashboardDetails=asyncHandler(async (req, res) => {
     }}
 
   ])
-  // console.log('users',users)
+  
   const tutors = await Tutor.aggregate([
     {
       $lookup: {
@@ -309,7 +309,7 @@ const loadDashboardDetails=asyncHandler(async (req, res) => {
   }else{
     res.status(500).json('not found')
   }
-  // console.log('tutor',tutors)
+
 })
 
 const loadSalesReport=asyncHandler(async (req, res) => {
@@ -399,7 +399,7 @@ const loadSalesReport=asyncHandler(async (req, res) => {
     },
   ]);
   
-  // console.log(subscriptionCounts);
+  
   const userCount = await User.countDocuments({});
 
   if(monthlySales){

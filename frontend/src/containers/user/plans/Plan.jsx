@@ -75,17 +75,17 @@ const [endDate,setEndDate]=useState(null)
      }else{
       navigate('/login')
      }
-  // console.log(currentPlan,'currentPlan')
+  
   },[])
  const [plans,setPlans]=useState([])
   const fetchPlans=async()=>{
   const response =await axiosInstance.get('/loadPlans')
    setPlans([...response.data.plans])
      setSubscription([response.data.subscription[0]])
-    //  console.log(response.data.subscription[0].mode)
+    
      setCurrentPlan(response.data.subscription[0].mode)
      const endDateISO = Date.parse(response.data.subscription[0].subscription.endDate);
-     console.log(endDateISO,'endDate')
+    
      const endDate = new Date(endDateISO);
 
      // Format endDate as "day/month/year"

@@ -11,7 +11,7 @@ function Quizzes() {
   const fetchQuizzes=async()=>{
     const response=await axiosInstance.get('/loadQuizzes')
     setQuizzes(response.data.quizzes)
-    console.log(response.data.quizzes)
+    
   }
   return (
     <div style={{ height: "", backgroundColor: "	#fcdad1" }}>

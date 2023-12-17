@@ -24,8 +24,7 @@ function MarkSheet() {
     try {
       // Fetch quiz and assignment data from the server using axios
       const response = await axiosInstance.get('/loadMarkSheet');
-      // const assignmentResponse = await axiosInstance.get('/loadAssignmentResults');
-         console.log(response.data.result)
+     
          const quizzesData = response.data.result;
 
          // Sort quizzes based on the 'time' field in descending order

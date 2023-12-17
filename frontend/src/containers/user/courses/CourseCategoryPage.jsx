@@ -33,7 +33,7 @@ function CourseCategoryPage() {
     try {
       const response = await axiosInstance.get("/courseCategoryList");
       setCoursesData(response.data.courses);
-      console.log(response.data.courses,'courses')
+      
       setCategoriesData(response.data.categories);
       setUniqueSubCategories([
         ...new Set(
@@ -52,9 +52,7 @@ function CourseCategoryPage() {
     const subCategoryMatch = selectedSubCategory
       ? course.subCategory==selectedSubCategory
       : true;
-      // console.log(selectedSubCategory,'selectedsub')
-      // // console.log(course.subCategories,'cate')
-      // console.log(subCategoryMatch,'match') 
+    
     return searchTermMatch && subCategoryMatch;
   });
 

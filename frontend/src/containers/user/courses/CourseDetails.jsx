@@ -39,7 +39,7 @@ function CourseDetails() {
        setTotalAverageRating(response.data?.avgRating)
       const endDateISO = Date.parse(response.data.plan.endDate);
       const endDate = new Date(endDateISO);
-    // console.log('endDate',response.data.plan.endDate)
+    
       if (endDate > Date.now()) {
         setSubscriptionActive(true);
         
@@ -56,7 +56,7 @@ function CourseDetails() {
             return;
          }
       const response =await axiosInstance.post('/rateCourse',{rating,review,courseId})
-      // console.log('Rating submitted:', rating);
+      
     setIsModalOpen(false);
     setError({})
     setRatingSubmitted(!ratingSubmitted)

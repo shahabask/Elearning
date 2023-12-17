@@ -11,15 +11,14 @@ import multer from 'multer';
 import path from 'path'
 const storage = multer.diskStorage({
 destination: (req, file, cb) => {
-  console.log('jkfof',file)
 
   cb(null, 'public/images');
-  console.log('ojew')
+
 },
 filename: (req, file, cb) => {
  
   cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname));
-   console.log('abcd',file.fieldname + "_" + Date.now() + path.extname(file.originalname))
+
 },
 });
 

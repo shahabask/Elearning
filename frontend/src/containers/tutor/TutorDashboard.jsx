@@ -67,7 +67,7 @@ function TutorDashboard() {
       setIsLoaded(true)
       const count={course:response.data.courseCount, quiz:response.data.quizCount, videos:response.data.videoCount}
       setMyData(count)
-      // console.log('response',count)
+     
     } catch (error) {
       console.log(error)
     }

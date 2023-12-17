@@ -84,11 +84,7 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const logoutUser = asyncHandler(async (req, res) => {
-  // res.cookie("jwt", "", {
-  //   httpOnly: true,
-  //   expires: new Date(0),
-  // });
-  console.log('res comming',req)
+
   res.status(200).json({ message: "User Logged Out" });
 });
 const verifyEmail = asyncHandler(async (req, res) => {
@@ -295,10 +291,10 @@ const loadCategoryDetails = asyncHandler(async (req, res) => {
 
 const loadProfile = asyncHandler(async (req, res) => {
   const userId = req.user._id;
-console.log('req.comming',userId)
+
   const myProfile = req.user;
   if (myProfile) {
-    console.log('jsfoje')
+   
     res.status(200).json({ myProfile });
   } else {
     res.status(500).json(`can't get the user`);
@@ -407,7 +403,7 @@ const loadUpgradePlan= asyncHandler(async (req, res) => {
    }else{
     let plans= await Plan.find({subscriptionMode:{$ne:'Basic'}})
 
-    // console.log('plans',plans)  
+    
     if(plans){
       res.status(200).json({plans})
     }else{
@@ -425,7 +421,7 @@ const checkout = asyncHandler(async (req, res) => {
 
   const calculateDiscount = (plan, isUpgrading) => {
     const discountPercentage = isUpgrading && subscriptionMode==='Premium'?  20 : 0; // Set the discount percentage based on isUpgrading
- console.log(subscriptionMode,'mode')
+ 
     // Calculate discounted price
     const discountedPrice = isUpgrading
       ? plan.price * (1 - discountPercentage / 100)
@@ -592,7 +588,7 @@ const loadQuizDetails = asyncHandler(async (req, res) => {
     },
   ]);
 
-  // console.log('quizDetails',quiz[0])
+
 
   if (quiz) {
     res.status(200).json({ quiz });
@@ -735,7 +731,7 @@ if(pendingAssignment){
 const submitAssignment=asyncHandler(async (req, res) => {
     
   const {selectedAssignment}=req.body
-  // console.log(selectedAssignment._id)
+ 
   const pdf=req.file.filename
   // res.status(200).json('successfull')
   const submit = await MarkList.updateOne(
@@ -763,7 +759,7 @@ const user={user:id,value:rating,review:review}
       user: id, // Specify the condition to match the user ID
     },
   },})
-  // console.log('removeDuplicate',removeDuplicate)
+ 
   const courseRating=await Course.updateOne({_id:courseId},{$push:{rating:user}})
 
   if(courseRating){
@@ -775,7 +771,7 @@ const user={user:id,value:rating,review:review}
 
 const loadCourseReviews=asyncHandler(async(req,res)=>{
   const {courseId}=req.params
-// console.log(courseId)
+
   // const course=await Course.findOne({_id:courseId}).select('rating')
   
   const reviews = await Course.aggregate([

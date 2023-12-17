@@ -45,8 +45,7 @@ const {tutorInfo}=useSelector((state)=>state.tutorAuth)
                 dispatch(setTutorCredentials({...res.data}))
                 navigate('/tutor/dashboard')
        } catch (error) {
-        console.log(error?.data)
-        console.log('error',error)
+       
         toast.error(error?.data || error.error)
        }
        

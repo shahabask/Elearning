@@ -47,9 +47,7 @@ const handleUpdate=async(e)=>{
   
 }
 
-// useEffect(()=>{
-//   console.log('SUB',)
-// })
+
 const [isModalOpen, setIsModalOpen] = useState(false);
 const [skills, setSkills] = useState(tutorData[0]?.specification || []);
 

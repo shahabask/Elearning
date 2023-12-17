@@ -7,7 +7,7 @@ function Category({ categoryName, image,_id}) {
       ? `https://www.skillsync.website/images/${image}`
       : '';
       useEffect(()=>{
-        console.log('id',_id)
+      
       },[])
       
   return (

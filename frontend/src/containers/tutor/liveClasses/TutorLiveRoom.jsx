@@ -11,7 +11,7 @@ function TutorLiveRoom() {
   const navigate=useNavigate()
 
   const { roomId,id } = useParams();
-console.log(id,'id')
+
     const handleEndLive=async(id)=>{
 
         const response=await axiosInstance.patch('/updateLiveStatus',{id,status:'Ended'})

@@ -31,7 +31,7 @@ const handleDeleteVideo = (videoUrl) => {
 
     useEffect(()=>{
       if(courseData){
-        console.log(courseData[0],'courseData')
+        (courseData[0],'courseData')
       setLocalVideos(courseData[0]?.videos)
       setCategory(courseData[0]?.categoryName)
       setSubCategory(courseData[0]?.subCategory)

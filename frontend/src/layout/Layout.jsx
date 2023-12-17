@@ -29,7 +29,7 @@ const [isSidebarOpen, setIsSidebarOpen] = useState(true);
       if (sidebarType === "admin" && admin) {
         return !prevIsSidebarOpen;
       } else if (sidebarType === "tutor" && tutor) {
-        console.log('value',prevIsSidebarOpen)
+        
         return !prevIsSidebarOpen;
       }
       return prevIsSidebarOpen;

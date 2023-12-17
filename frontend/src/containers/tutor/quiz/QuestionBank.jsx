@@ -104,7 +104,7 @@ function QuestionBank() {
 
     try {
       const response = await axiosInstance.post('/addQuestion', { ...formData, selectedSubcategory });
-      console.log(response);
+
       if (response.status === 200) {
         toast.success('Successfully uploaded');
       }
@@ -147,7 +147,7 @@ function QuestionBank() {
         ...formData,
         selectedSubcategory,
       });
-      console.log(response);  
+      
       if (response.status === 200) {
         toast.success('Successfully updated');
       }

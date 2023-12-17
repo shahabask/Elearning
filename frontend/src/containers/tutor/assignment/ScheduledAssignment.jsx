@@ -34,9 +34,9 @@ const ScheduledAssignments = () => {
       const status = 'started';
       const response = await axiosInstance.get(`/loadassignments/${status}`)
       setScheduledAssignments(response.data.assignment)
-      console.log(response.data.assignment,'assignment')
+    
       setSubjects(response.data.subjects.specification)
-      // console.log('res',response.data.subjects.specification)
+   
     } catch (error) {
       console.log('error');
     }
@@ -106,7 +106,7 @@ const ScheduledAssignments = () => {
 
       toast.success('successfully added')
     } catch (error) {
-      console.log(error)
+    
       toast.error('error')
     }
 

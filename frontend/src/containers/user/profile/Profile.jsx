@@ -29,7 +29,7 @@ export default function Profile() {
     
      const response=await axiosInstance.get('/loadProfile')
    setUserData(response.data.myProfile)
-   console.log('myProfile',response.data.myProfile)
+  
 
    } catch (error) {
      console.log('error',error.response||error.error)
@@ -90,7 +90,7 @@ export default function Profile() {
   const modifiedImagePath = imagePath
    ? `https://www.skillsync.website/images/${imagePath}`
    : '';
-   console.log('img',modifiedImagePath)
+   
    return (
      <div style={{ minHeight: "100vh", backgroundColor: "	#fcdad1" }}>
        <div className="container ">

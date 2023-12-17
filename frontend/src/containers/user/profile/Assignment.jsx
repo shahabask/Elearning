@@ -33,7 +33,7 @@ function Assignment() {
 
    const response=await axiosInstance.get('/loadAssignmentsData') 
      setAssignments(response.data.pendingAssignment)
-     console.log('assingment',response.data.pendingAssignment)
+    
   }
   const handleFileChange = (event) => {
     const file = event.target.files[0];

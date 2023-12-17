@@ -29,7 +29,7 @@ useEffect(()=>{
 const fetchCategoryDetails=async()=>{
     try {
         const response=await axiosInstance.get(`https://www.skillsync.website/api/categoryDetails/${categoryId}`)
-        console.log('response',response?.data)
+       
       const modifiedCategory=response?.data?.map((item) => {
         if (item.courseImage) {
           item.courseImage = `https://www.skillsync.website/images/${item.courseImage}`;

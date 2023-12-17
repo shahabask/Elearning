@@ -31,7 +31,7 @@ function VerifyAssignment() {
    
   try {
     const response=await axiosInstance.get('/loadAssignmentData')
-  //  console.log('do',response.data.assignments)
+  
     setStudentsData(response.data.assignments)
   } catch (error) {
     console.log(error)
@@ -64,7 +64,7 @@ function VerifyAssignment() {
     e.preventDefault()
    try {
 
-    console.log('coming')
+  
        const response=await axiosInstance.post('/evalutedAssignment',{selectedStudent,selectedAssignment,mark})
        
        

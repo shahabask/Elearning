@@ -7,10 +7,10 @@ function Success() {
 
 const navigate=useNavigate()
     const { userId, mode, date } = useParams();
-    console.log(userId,mode,date,'details')
+    
 
      useEffect(()=>{
-        console.log(userId,mode,date,'details')
+        
         confirmPayment()
      },[])
 
@@ -18,13 +18,12 @@ const navigate=useNavigate()
         try{
            if(userId&&mode&&date){
              const response=await axiosInstance.post('/confirmPayment',{userId,mode,date})
-             console.log(response,'response')
+            
            }else{
             navigate('/plans')
            }
         }catch(error){
-            console.log('error',error.response)
-            console.log(error)
+         
                toast.error('error')
         }
      }

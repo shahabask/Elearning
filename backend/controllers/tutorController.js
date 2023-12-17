@@ -364,7 +364,7 @@ const addVideo = asyncHandler(async (req, res) => {
     { _id: id },
     { $push: { videos: videoData } }
   );
-  console.log(updateResult);
+  
   if (updateResult) {
     res.status(200).json("video added");
   } else {
@@ -524,9 +524,9 @@ const updateLiveStatus = asyncHandler(async (req, res) => {
 
 const deleteAssignment = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  // console.log(id,'id')
+ 
   const deleteAssignment = await Assignments.deleteOne({ _id: id });
-  console.log(deleteAssignment, "deleteAssignment");
+ 
   if (deleteAssignment) {
     res.status(200).json("successfully deleted");
   } else {
@@ -601,7 +601,7 @@ const loadAssignment = asyncHandler(async (req, res) => {
   const subjects = await Tutor.findOne({ _id: req.user._id }).select(
     "specification"
   );
-  // console.log(assignment, "assignment");
+  
   if (assignment) {
     res.status(200).json({ assignment, subjects });
   } else {
@@ -611,7 +611,7 @@ const loadAssignment = asyncHandler(async (req, res) => {
 
 const addAssignment = asyncHandler(async (req, res) => {
   const { name, startDate, endDate, totalMark, constraints, subject } =req.body;
-  // console.log('re',req.body)
+  
   const tutorId=req.user._id
   const addAssignment = await Assignments.create({
     name: name,
@@ -701,7 +701,7 @@ const loadAssignmentData= asyncHandler(async (req, res) => {
 
 const evalutedAssignment=asyncHandler(async (req, res) => {
   const {selectedStudent,selectedAssignment,mark}=req.body
-  console.log('selectedAssignment',selectedAssignment,'selectedStudent',selectedStudent)
+  
   const updateAssignment=await MarkList.findOneAndUpdate(
     {
       studentId: selectedStudent,
@@ -715,7 +715,7 @@ const evalutedAssignment=asyncHandler(async (req, res) => {
     },
     )
 
-  //  console.log(updateAssignment)
+ 
 
     if(updateAssignment){
      

@@ -27,23 +27,23 @@ function OtpLoginEmail() {
       
       
       try {
-        console.log('userType',userType)
+        
         if(userType=="user"){
             const res=await axiosInstance.post('/otpLoginVerifyEmail',{email})
-        console.log(res)
+        
         navigate('/otpLogin',{state:email})
         }else if(userType=="admin"){
             const res=await adminAxiosInstance.post('/otpLoginVerifyEmail',{email})
-            console.log(res)
+           
             navigate('/admin/otpLogin',{state:email})
         }else{
             const res=await tutorAxiosInstance.post('/otpLoginVerifyEmail',{email})
-            console.log(res)
+            
             navigate('/tutor/otpLogin',{state:email})
         }
         
       } catch (error) {
-        console.log(error)
+        
         toast.error(error?.response?.data||error.error)
       }
     }
