@@ -152,8 +152,8 @@ const blockCourse = asyncHandler(async (req, res) => {
 
 const editCategory = asyncHandler(async (req, res) => {
   const { _id, categoryName, subCategories, image } = req.body;
-  let imagePath = req?.file?.path;
-  imagePath = imagePath ? imagePath : `backend\\public\\images\\${image}`;
+  let imagePath = req?.file?.filename;
+  imagePath = imagePath ? imagePath : `${image}`;
   const category = await Category.updateOne(
     { _id: _id },
     {

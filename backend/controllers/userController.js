@@ -306,10 +306,10 @@ console.log('req.comming',userId)
 });
 
 const updateProfile = asyncHandler(async (req, res) => {
-  console.log('checking')
+  
   const userId = req.user._id;
   const { firstName, secondName, phone, image } = req.body;
-  console.log(req.file,'path')
+  
   let imagePath = req?.file?.filename;
   imagePath = imagePath ? imagePath : `${image}`;
 

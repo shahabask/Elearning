@@ -267,8 +267,8 @@ const loadCourses = asyncHandler(async (req, res) => {
 
 const editCourse = asyncHandler(async (req, res) => {
   const { id, course, description, image, deletedVideoUrls } = req.body;
-  let imagePath = req?.file?.path;
-  imagePath = imagePath ? imagePath : `backend\\public\\images\\${image}`;
+  let imagePath = req?.file?.filename;
+  imagePath = imagePath ? imagePath : `${image}`;
 
   const updateCourse = await await Course.updateOne(
     { _id: id },
@@ -332,9 +332,9 @@ const updateProfile = asyncHandler(async (req, res) => {
   const userId = req.user._id;
   const { userName, city, state, country, skill, description, degree, image } =
     req.body;
-  let imagePath = req?.file?.path;
+  let imagePath = req?.file?.filename;
 
-  imagePath = imagePath ? imagePath : `backend\\public\\images\\${image}`;
+  imagePath = imagePath ? imagePath : `${image}`;
   const updateTutor = await Tutor.updateOne(
     { _id: userId },
     {
@@ -357,7 +357,7 @@ const addVideo = asyncHandler(async (req, res) => {
   const { id, title, description } = req.body;
   const videoUrl = req.files[0].filename;
 
-  console.log(videoUrl);
+
 
   const videoData = { title, description, videoUrl };
   const updateResult = await Course.updateOne(
