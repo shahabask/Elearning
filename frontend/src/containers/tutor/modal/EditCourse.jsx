@@ -174,10 +174,10 @@ const handleDeleteVideo = (videoUrl) => {
 
         <div className="videos-section mt-4">
   <h3>Videos:</h3>
-  {localVideos.map((video, index) => (
+  {localVideos?.map((video, index) => (
     <div key={index} className="video-pill">
       <span>{video.title}</span>
-      <button onClick={() => handleDeleteVideo(video.videoUrl)}>
+      <button onClick={() => handleDeleteVideo(video?.videoUrl)}>
         <FaTrash />
       </button>
     </div>
