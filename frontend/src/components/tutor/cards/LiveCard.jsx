@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { AiFillDelete, AiOutlineDelete } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import socket from '../../../containers/utils/socket';
-// const socket =io.connect('http://localhost:5001')
+
 const LiveCard = ({ liveDetails, handleDelete }) => {
 
   const navigate=useNavigate()

@@ -28,7 +28,7 @@ export default function CategoryEditModal({
     e.preventDefault();
     const errors = validate(categoryName, subCategories,selectedImage);
     setFormError(errors);
-    const imageFileName = selectedImage instanceof File ? selectedImage: selectedImage.replace("http://localhost:5000/images/", "")
+    const imageFileName = selectedImage instanceof File ? selectedImage: selectedImage.replace("https://www.skillsync.website/images/", "")
     if (Object.keys(errors).length === 0) {
       try {
         const updatedCategoryData = {
@@ -95,7 +95,7 @@ export default function CategoryEditModal({
   // const correctPath=`${imagePath.replace(/^backend\/public\//, '')}`
 
     const modifiedImagePath = imagePath
-    ? `http://localhost:5000/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
+    ? `https://www.skillsync.website/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
     : '';
   return (
 <Modal

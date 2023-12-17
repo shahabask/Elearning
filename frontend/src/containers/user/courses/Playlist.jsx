@@ -64,7 +64,7 @@ console.log('image', imageName);
           <article className="article bg-white shadow-md rounded-md overflow-hidden mt-15 mb-15">
       <div className="article-img" style={{ height: "500px", overflow: "hidden" }}>
         <ReactPlayer
-          url={`http://localhost:5000/videos/${selectedVideo?.videoUrl}`}
+          url={`https://www.skillsync.website/videos/${selectedVideo?.videoUrl}`}
           controls
           width="100%"
           height="100%"
@@ -113,7 +113,7 @@ console.log('image', imageName);
                   <div className="flex-shrink-0 mr-4">
                     <img
                       className="w-32 h-24 object-cover"
-                      src={`http://localhost:5000/images/${courseImage}`}
+                      src={`https://www.skillsync.website/images/${courseImage}`}
                       alt="Video Thumbnail"
                     />
                   </div>

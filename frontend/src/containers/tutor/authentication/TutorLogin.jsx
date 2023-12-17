@@ -36,7 +36,7 @@ function TutorLogin() {
     setFormErrors(validate(email, password));
     setIsSubmit(true);
     try {
-      const res = await axios.post(`http://localhost:5000/api/tutor/login`, {
+      const res = await axios.post(`https://www.skillsync.website/api/tutor/login`, {
         email,
         password,
       });

@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://3.111.231.253:5000/api', // Replace with your API URL
+    baseURL: 'https://www.skillsync.website/api', // Replace with your API URL
     headers: {
       'Content-Type': 'application/json',
       withCredentials: true, // If needed for cross-origin requests

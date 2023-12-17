@@ -31,7 +31,7 @@ function CourseDetails() {
     try {
       let response = await axiosInstance.get(`/loadCourseDetails/${courseId}`);
     
-      response.data.courseDetails.image = `http://localhost:5000/${response.data.courseDetails.image.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`;
+      response.data.courseDetails.image = `https://www.skillsync.website/${response.data.courseDetails.image.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`;
       setCourseInfo(response.data.courseDetails);
       setRating(response.data.rating[0]?.value)
       setReview(response.data.rating[0]?.review)

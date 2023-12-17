@@ -38,7 +38,7 @@ function AdminLogin() {
        setIsSubmit(true)
        
        try {
-         const res=await axios.post('http://localhost:5000/api/admin/login',{email,password})
+         const res=await axios.post('https://www.skillsync.website/api/admin/login',{email,password})
          
            dispatch(setAdminCredentials({ ...res.data })) 
            navigate('/admin');

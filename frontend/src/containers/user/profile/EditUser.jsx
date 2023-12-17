@@ -16,7 +16,7 @@ function EditUser({ userData }) {
       selectedImage instanceof File
         ? selectedImage
         : selectedImage
-            .replace("http://localhost:5000/images/", "")
+            .replace("https://www.skillsync.website/images/", "")
             .replace("backend\\public\\images\\", "");
     const updatedUserInfo = {
       firstName,
@@ -48,7 +48,7 @@ function EditUser({ userData }) {
   const imagePath = userData?.image;
 
   const modifiedImagePath = imagePath
-    ? `http://localhost:5000/${imagePath
+    ? `https://www.skillsync.website/${imagePath
         .replace(/\\/g, "/")
         .replace(/^backend\/public\//, "")}`
     : "";

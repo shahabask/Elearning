@@ -3,7 +3,7 @@ import axiosInstance from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
 import socket from "../../utils/socket";
 import { useSelector } from "react-redux";
-// const socket =io.connect('http://localhost:5001')
+
 
 
 function Lives() {

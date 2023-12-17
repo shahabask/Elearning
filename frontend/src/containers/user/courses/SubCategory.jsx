@@ -28,14 +28,14 @@ useEffect(()=>{
 },[])
 const fetchCategoryDetails=async()=>{
     try {
-        const response=await axiosInstance.get(`http://localhost:5000/api/categoryDetails/${categoryId}`)
+        const response=await axiosInstance.get(`https://www.skillsync.website/api/categoryDetails/${categoryId}`)
         console.log('response',response?.data)
       const modifiedCategory=response?.data?.map((item) => {
         if (item.courseImage) {
-          item.courseImage = `http://localhost:5000/${item.courseImage.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`;
+          item.courseImage = `https://www.skillsync.website/${item.courseImage.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`;
         }
         if(item.image){
-          item.image = `http://localhost:5000/${item.image.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`;
+          item.image = `https://www.skillsync.website/${item.image.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`;
 
         }
         return item;

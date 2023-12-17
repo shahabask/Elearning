@@ -1,10 +1,10 @@
 
-export const tutorUrl='http://localhost:5000/api/tutor'
+export const tutorUrl='https://www.skillsync.website/api/tutor'
 import axios from "axios";
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:5000/api/tutor', // Replace with your API URL
+    baseURL: 'https://www.skillsync.website/api/tutor', // Replace with your API URL
     headers: {
       'Content-Type': 'application/json',
       withCredentials: true, // If needed for cross-origin requests

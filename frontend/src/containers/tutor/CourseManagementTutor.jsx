@@ -19,7 +19,7 @@ function CourseManagementTutor() {
     const imagePath = `${value.replace(/\\/g, '/')}`;
 
     const modifiedImagePath = imagePath
-    ? `http://localhost:5000/${imagePath.replace(/^backend\/public\//, '')}`
+    ? `https://www.skillsync.website/${imagePath.replace(/^backend\/public\//, '')}`
     : '';
 
 

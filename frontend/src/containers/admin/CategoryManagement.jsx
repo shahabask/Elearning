@@ -19,7 +19,7 @@ export default function CategoryManagement() {
     const imagePath = `${value.replace(/\\/g, '/')}`;
 
     const modifiedImagePath = imagePath
-    ? `http://localhost:5000/${imagePath.replace(/^backend\/public\//, '')}`
+    ? `https://www.skillsync.website/${imagePath.replace(/^backend\/public\//, '')}`
     : '';
    
 
@@ -110,7 +110,7 @@ export default function CategoryManagement() {
  
   try {
         
-    const response=await axios.post('http://localhost:5000/api/admin/editCategory',formData,{
+    const response=await axios.post('https://www.skillsync.website/api/admin/editCategory',formData,{
       headers: {
         'Content-Type': 'multipart/form-data', 
       },})
@@ -138,7 +138,7 @@ export default function CategoryManagement() {
 const handleAddCategory = async (formData) => {
   try {
      
-    const response = await axios.post('http://localhost:5000/api/admin/addCategory', formData,{
+    const response = await axios.post('https://www.skillsync.website/api/admin/addCategory', formData,{
       headers: {
         'Content-Type': 'multipart/form-data', 
       },})

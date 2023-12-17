@@ -458,14 +458,14 @@ const checkout = asyncHandler(async (req, res) => {
   const lineItems = lineItem();
   const date = new Date();
   const dateTimestamp = date.getTime(); // Get the timestamp of the date
-  const successUrl = `http://localhost:3000/success/${userId}/${mode}/${dateTimestamp}`;
+  const successUrl = `https://www.skillsync.website/success/${userId}/${mode}/${dateTimestamp}`;
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
     success_url: successUrl,
-    cancel_url: "http://localhost:3000/cancel",
+    cancel_url: "https://www.skillsync.website/cancel",
   });
 
   res.status(200).json({

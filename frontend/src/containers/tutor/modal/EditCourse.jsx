@@ -46,7 +46,7 @@ const handleDeleteVideo = (videoUrl) => {
     const errors = validate(course, description, selectedImage);
     setFormError(errors);
   
-    const imageFileName = selectedImage instanceof File ? selectedImage : selectedImage.replace("http://localhost:5000/images/", "");
+    const imageFileName = selectedImage instanceof File ? selectedImage : selectedImage.replace("https://www.skillsync.website/images/", "");
   
     if (Object.keys(errors).length === 0) {
       try {
@@ -103,7 +103,7 @@ const handleDeleteVideo = (videoUrl) => {
     // const correctPath=`${imagePath.replace(/^backend\/public\//, '')}`
   
       const modifiedImagePath = imagePath
-      ? `http://localhost:5000/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
+      ? `https://www.skillsync.website/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
       : '';
 
     return (

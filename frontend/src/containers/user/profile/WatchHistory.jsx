@@ -113,7 +113,7 @@ function WatchHistory() {
                 </button>
                 <div onClick={()=>handleVideoClick(video.courseId)}>
                 <img
-                  src={`http://localhost:5000/images/${video.thumbnail}`}
+                  src={`https://www.skillsync.website/images/${video.thumbnail}`}
                   alt={video.title}
                   className="w-full h-40 object-cover mb-4 rounded-md"
                 />

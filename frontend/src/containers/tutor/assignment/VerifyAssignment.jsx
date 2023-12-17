@@ -109,7 +109,7 @@ function VerifyAssignment() {
       {pdfFile ? (
         <div className="mb-4 flex" >
           <div className='border rounded-md overflow-hidden shadow-lg'>
-          <PDFViewer file={`http://localhost:5000/backend/public/pdf/${encodeURIComponent(pdfFile)}`} />
+          <PDFViewer file={`https://www.skillsync.website/backend/public/pdf/${encodeURIComponent(pdfFile)}`} />
 
           </div>
           <div className="flex-1 mb-4 ml-4 p-4 border rounded-md bg-white">
