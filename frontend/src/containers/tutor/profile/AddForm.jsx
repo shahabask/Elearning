@@ -18,7 +18,7 @@ const [description, setDescription] = useState(tutorData[0]?.description || '');
   const [selectedImage, setSelectedImage] = useState(tutorData[0]?.image||null);
 const handleUpdate=async(e)=>{
   e.preventDefault();
-  const imageFileName = selectedImage instanceof File ? selectedImage: selectedImage.replace("https://www.skillsync.website/images/", "").replace("backend\\public\\images\\", "")
+  const imageFileName = selectedImage instanceof File ? selectedImage: selectedImage.replace("https://www.skillsync.website/images/", "")
   const updatedTutorInfo = {
     userName,
     city,
@@ -59,7 +59,7 @@ const imagePath = tutorData[0]?.image
 // const correctPath=`${imagePath.replace(/^backend\/public\//, '')}`
 
 const modifiedImagePath = imagePath
-? `https://www.skillsync.website/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
+? `https://www.skillsync.website/images/${imagePath}`
 : '';
 
 

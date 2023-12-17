@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Category({ categoryName, image,_id}) {
   const modifiedImagePath = image
-      ? `https://www.skillsync.website/${image.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
+      ? `https://www.skillsync.website/images/${image}`
       : '';
       useEffect(()=>{
         console.log('id',_id)

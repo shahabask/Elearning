@@ -16,8 +16,7 @@ function EditUser({ userData }) {
       selectedImage instanceof File
         ? selectedImage
         : selectedImage
-            .replace("https://www.skillsync.website/images/", "")
-            .replace("backend\\public\\images\\", "");
+            .replace("https://www.skillsync.website/images/", "");
     const updatedUserInfo = {
       firstName,
       secondName,

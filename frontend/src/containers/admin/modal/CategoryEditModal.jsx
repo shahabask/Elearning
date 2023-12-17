@@ -95,7 +95,7 @@ export default function CategoryEditModal({
   // const correctPath=`${imagePath.replace(/^backend\/public\//, '')}`
 
     const modifiedImagePath = imagePath
-    ? `https://www.skillsync.website/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
+    ? `https://www.skillsync.website/images/${imagePath}`
     : '';
   return (
 <Modal

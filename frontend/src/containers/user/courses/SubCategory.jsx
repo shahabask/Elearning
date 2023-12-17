@@ -32,10 +32,10 @@ const fetchCategoryDetails=async()=>{
         console.log('response',response?.data)
       const modifiedCategory=response?.data?.map((item) => {
         if (item.courseImage) {
-          item.courseImage = `https://www.skillsync.website/${item.courseImage.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`;
+          item.courseImage = `https://www.skillsync.website/images/${item.courseImage}`;
         }
         if(item.image){
-          item.image = `https://www.skillsync.website/${item.image.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`;
+          item.image = `https://www.skillsync.website/images${item.image}`;
 
         }
         return item;

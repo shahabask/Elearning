@@ -5,7 +5,7 @@ import StarRating from 'react-star-rating-component';
 
 function CourseCard({_id,image,course,description,categoryName,rating}) {
   const modifiedImagePath = image
-      ? `https://www.skillsync.website/${image.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
+      ? `https://www.skillsync.website/images/${image}`
       : '';
     
       

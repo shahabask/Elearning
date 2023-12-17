@@ -16,10 +16,10 @@ export default function CategoryManagement() {
     const { value } = params;
     
     if (value) {
-    const imagePath = `${value.replace(/\\/g, '/')}`;
+    const imagePath = `${value}`;
 
     const modifiedImagePath = imagePath
-    ? `https://www.skillsync.website/${imagePath.replace(/^backend\/public\//, '')}`
+    ? `https://www.skillsync.website/images/${imagePath}`
     : '';
    
 
