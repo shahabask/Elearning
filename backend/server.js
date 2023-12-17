@@ -26,6 +26,8 @@ app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 const port = 5000;
 
+app.use(express.static("backend/public"));
+app.use("/images",express.static("public/images"));
 app.use('/api', userRoutes);
 app.use('/api/tutor', tutorRoutes);
 app.use('/api/admin', adminRoutes);
