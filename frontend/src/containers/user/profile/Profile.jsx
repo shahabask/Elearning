@@ -90,7 +90,7 @@ export default function Profile() {
   const modifiedImagePath = imagePath
    ? `https://www.skillsync.website/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
    : '';
-  //  console.log('img',modifiedImagePath)
+   console.log('img',modifiedImagePath)
    return (
      <div style={{ minHeight: "100vh", backgroundColor: "	#fcdad1" }}>
        <div className="container ">
