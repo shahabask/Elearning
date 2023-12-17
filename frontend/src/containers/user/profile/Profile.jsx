@@ -20,16 +20,16 @@ export default function Profile() {
    const [subcategories,setSubcategories]=useState('')
 
   useEffect(()=>{
-    console.log('profile load head')
+    
   fetchUser()
  
   },[])
   const fetchUser=async()=>{
    try {
-    console.log('profile load')
+    
      const response=await axiosInstance.get('/loadProfile')
    setUserData(response.data.myProfile)
-   console.log('myProfile',response.data.myProfile.sub)
+   console.log('myProfile',response.data.myProfile)
 
    } catch (error) {
      console.log('error',error.response||error.error)
@@ -88,7 +88,7 @@ export default function Profile() {
   };
    const imagePath = userData?.image
   const modifiedImagePath = imagePath
-   ? `https://www.skillsync.website/public/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
+   ? `https://www.skillsync.website/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
    : '';
    console.log('img',modifiedImagePath)
    return (
