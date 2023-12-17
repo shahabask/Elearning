@@ -88,7 +88,7 @@ export default function Profile() {
   };
    const imagePath = userData?.image
   const modifiedImagePath = imagePath
-   ? `https://www.skillsync.website/${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
+   ? `${imagePath.replace(/\\/g, '/').replace(/^backend\/public\//, '')}`
    : '';
    console.log('img',modifiedImagePath)
    return (
