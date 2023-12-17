@@ -18,7 +18,7 @@ destination: (req, file, cb) => {
 filename: (req, file, cb) => {
  
   cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname));
- 
+   console.log('abcd',file.fieldname + "_" + Date.now() + path.extname(file.originalname))
 },
 });
 
