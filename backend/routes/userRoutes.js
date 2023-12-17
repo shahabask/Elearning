@@ -6,13 +6,20 @@ import {authUser,registerUser,logoutUser,verifyEmail,confirmOtp,resetPassword,ot
   ,addToHistory} from '../controllers/userController.js'
 import  authcheck  from '../middleware/userMiddleware.js'
 
-
+import fs from 'fs'
 import multer from 'multer';
 import path from 'path'
 const storage = multer.diskStorage({
 destination: (req, file, cb) => {
   console.log('jkfof')
-  cb(null, 'public/images');
+  const destFolder = 'backend/public/images';
+    
+  // Create the destination folder if it doesn't exist
+  if (!fs.existsSync(destFolder)) {
+    fs.mkdirSync(destFolder, { recursive: true });
+  }
+
+  cb(null, destFolder)
   console.log('ojew')
 },
 filename: (req, file, cb) => {
