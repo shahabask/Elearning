@@ -28,7 +28,7 @@ const upload = multer({ storage: storage });
 const storageForPDF = multer.diskStorage({
   destination: (req, file, cb) => {
    
-    cb(null, '../../backend/public/pdf');
+    cb(null, 'backend/public/pdf');
     // console.log(' file comming')
   },
   filename: (req, file, cb) => {
