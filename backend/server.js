@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 const port = 5000;
 
 app.use(express.static("backend/public"));
-app.use("/images",express.static("public/images"));
+app.use("/images",express.static("/images"));
 // app.use("/videos",express.static("public/videos"));
 // app.use("/pdf",express.static("public/pdf"));
 
