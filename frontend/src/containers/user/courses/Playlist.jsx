@@ -23,11 +23,13 @@ const Playlist = () => {
       //  setVideoDetails([...response.data.videos[0].videos]) 
       setVideoDetails(response.data.videos[0].videos)
        setSelectedVideo(response.data.videos[0].videos[0])
+      console.log('video path',`https://www.skillsync.website/videos/${response.data.videos[0].videos[0]?.videoUrl}`) 
        const imagePath = response.data.videos[0].image;
+
 const imageName = imagePath.split(/[\\/]/).pop();
 
 setCourseImage(imageName);
-console.log('image', imageName);
+
       //  console.log('videos',response.data.videos[0].image)
      } catch (error) {
       console.log('error')
