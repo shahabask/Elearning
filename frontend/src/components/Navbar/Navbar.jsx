@@ -96,7 +96,7 @@ const Navbar = () => {
                 <li>
   <Link to="/profile" className="profile-icon">
     <img
-      src="/public/images/aaron-burden-6jYoil2GhVk-unsplash.jpg"
+      src="/images/aaron-burden-6jYoil2GhVk-unsplash.jpg"
       alt="User Profile"
       style={{
         width: '30px', // Adjust the width as needed
