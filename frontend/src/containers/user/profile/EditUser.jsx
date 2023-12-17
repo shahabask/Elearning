@@ -49,9 +49,7 @@ function EditUser({ userData }) {
   const imagePath = userData?.image;
 
   const modifiedImagePath = imagePath
-    ? `https://www.skillsync.website/${imagePath
-        .replace(/\\/g, "/")
-        .replace(/^backend\/public\//, "")}`
+    ? `https://www.skillsync.website/images/${imagePath}`
     : "";
 
 
