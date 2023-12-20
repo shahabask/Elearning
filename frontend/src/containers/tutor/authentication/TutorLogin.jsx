@@ -69,7 +69,7 @@ function TutorLogin() {
   };
   return (
     <div className="login template d-flex justify-content-center align-items-center vh-100 ">
-      <div className="form_container p-5 rounded">
+      <div className="p-5 rounded w-30 md:w-45 sm:w-90 border shadow-lg">
         <form onSubmit={submitHandler}>
           <h3 className="text-center">Tutor Login</h3>
           <div className="mb-3">

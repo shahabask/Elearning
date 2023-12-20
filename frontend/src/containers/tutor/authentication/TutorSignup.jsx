@@ -82,7 +82,7 @@ const {tutorInfo}=useSelector((state)=>state.tutorAuth)
   return (
    <>
    <div className='signup template d-flex justify-content-center align-items-center vh-100 ' style={{backgroundColor:'#33363d'}}>
-   <div className='form_container p-5 rounded' style={{backgroundColor:'#ffc0cb'}}>
+   <div className='p-5 rounded w-30 md:w-45 sm:w-90 border shadow-lg' style={{backgroundColor:'#ffc0cb'}}>
      <form onSubmit={submitHandler}>
        <h3 className='text-center'>Tutor SignUp</h3>
        <div className='mb-3'>
