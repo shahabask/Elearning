@@ -1,28 +1,24 @@
-@media screen and (min-width: 1001px){
-.form_container{
+.form_container {
     width: 30%;
-    
-    
+    background-color: white; /* Add a background color or any other styles you need */
+    margin: auto; /* Center the form container horizontally */
+    padding: 20px; /* Add padding for better styling */
 }
-}
-/* .login-form{
-    background-color: #94b991b3;
-} */
-@media screen and (max-width: 1000px){
-    .form_container{
+
+/* Adjust the width for screens up to 1000 pixels */
+@media screen and (max-width: 1000px) {
+    .form_container {
         width: 45%;
     }
-
 }
 
-
-
-@media screen and (max-width: 700px){
-    .form_container{
+/* Further adjust the width for screens up to 700 pixels */
+@media screen and (max-width: 700px) {
+    .form_container {
         width: 90%;
     }
-
 }
+
 .background-image {
     /* background-image: url('public/images/From Briefing to Experience, Designing Today’s Customer Experience Center.jpeg'); Replace 'path/to/your/image.jpg' with the actual path to your image */
     /* background-size: cover; Adjust as needed */

@@ -73,11 +73,11 @@ function UserLogin() {
   }
   return (
     <div
-      className="login template d-flex justify-content-center align-items-center vh-100 background-image"
+      className="login d-flex justify-content-center align-items-center vh-100 background-image"
     
     >
-      <div className="form_container p-5 rounded">
- 
+      <div className="form_container">
+       <div className="p-5 rounded">
         <form onSubmit={submitHandler}>
           <h3 className="text-center">Sign In</h3>
           <div className="mb-3">
@@ -117,6 +117,7 @@ function UserLogin() {
     
     </div>
         </form>
+
         <div className="links-container text-end mt-2">
         <p >
         <Link style={{color:"black",textDecoration:'none'}} to='/otpLoginEmail' className="ms-2">Otp Login</Link>
@@ -125,6 +126,7 @@ function UserLogin() {
       <p>
      
       </p>
+      </div>
       </div>
     </div>
     </div>
