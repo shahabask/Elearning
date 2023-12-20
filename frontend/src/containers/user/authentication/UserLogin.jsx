@@ -73,10 +73,10 @@ function UserLogin() {
   }
   return (
     <div
-      className="login d-flex justify-content-center align-items-center vh-100 background-image"
+      className="login template d-flex justify-content-center align-items-center vh-100 background-image"
     
     >
-      <div className="p-5 rounded w-30 md:w-45 sm:w-90">
+      <div className="p-5 rounded w-30 md:w-45 sm:w-90 border shadow-lg">
 
        
         <form onSubmit={submitHandler}>

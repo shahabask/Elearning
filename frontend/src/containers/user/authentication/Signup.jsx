@@ -96,7 +96,7 @@ useEffect(() => {
   return (
     <>
       <div className="signup template d-flex justify-content-center align-items-center vh-100 background-image">
-      <div className="p-5 rounded w-30 md:w-45 sm:w-90">
+      <div className="p-5 rounded w-30 md:w-45 sm:w-90 border shadow-lg">
     <form onSubmit={submitHandler}>
       <h3 className="text-center">Sign Up</h3>
       <div className="mb-3">
