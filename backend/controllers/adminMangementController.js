@@ -6,10 +6,15 @@ import Course from "../models/courseModel.js";
 import Plan from "../models/plansModel.js";
 
 const loadUsers = asyncHandler(async (req, res) => {
-  const users = await User.find(
-    {},
-    "email firstName secondName _id isBlocked subscription"
-  );
+  const users = await User.find({})
+  .populate({
+    path: 'subscription.mode', // Update the path to include 'mode'
+    model: 'Plan',
+    select: 'subscriptionMode' // Assuming this is the field you want to populate in the 'mode' field
+  })
+  .select('email firstName secondName _id isBlocked subscription');
+
+console.log(users)
 
   if (users) {
     res.status(201).json({ users });
