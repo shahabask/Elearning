@@ -37,16 +37,7 @@ export default function UserManagement() {
     },
     
    
-    {
-      field: 'details',
-      headerName: 'Details',
-      width: 100,
-      renderCell: (params) => (
-        <button className="button-pill" onClick={(e) => handleDetailsClick(e,params.row)}>
-          View
-        </button>
-      ),
-    },
+
     
    
   
@@ -94,7 +85,9 @@ export default function UserManagement() {
     const fetchData = async () => {
       try {
         const res = await axiosInstance.get('/loadUsers');
-        setRows([...res.data.users]);
+        const rowsWithIndex = res.data.users.map((user, index) => ({ ...user, index: index + 1 }));
+        setRows(rowsWithIndex);
+       
         
       } catch (error) {
         console.error('Error fetching data:', error);

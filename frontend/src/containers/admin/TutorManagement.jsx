@@ -10,7 +10,7 @@ import { FaUnlock, FaLock } from 'react-icons/fa'
  
 function TutorManagement() {
   const columns = [
-    { field: '_id', headerName: 'ID', width: 70 },
+    { field: 'index', headerName: 'INDEX', width: 70 },
     { field: 'email', headerName: 'Email', width: 130},
     { field: 'userName', headerName: 'User Name', width: 130 },
     { field: 'specification', headerName: 'Specification', width: 130 },
@@ -33,17 +33,7 @@ function TutorManagement() {
     
     
     
-    // {
-    //   field: 'details',
-    //   headerName: 'Details',
-    //   width: 100,
-    //   renderCell: (params) => (
-    //     <button className="button-pill" onClick={() => handleDetailsClick(params.row.id)}>
-    //       View
-    //     </button>
-    //   ),   
-    // },
-    
+
     
    
   
@@ -74,8 +64,8 @@ function TutorManagement() {
     const fetchData = async () => {
       try {
         const res = await axiosInstance.get('/loadTutors');
-     
-        setRows([...res.data.tutors]);
+        const rowsWithIndex = res.data.tutors.map((tutor, index) => ({ ...tutor, index: index + 1 }));
+        setRows(rowsWithIndex);
       } catch (error) {
         console.error('Error fetching data:', error)
       }
