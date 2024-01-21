@@ -10,7 +10,7 @@ import { FaUnlock, FaLock } from 'react-icons/fa'
  
 function TutorManagement() {
   const columns = [
-    { field: 'index', headerName: 'INDEX', width: 70 },
+    { field: 'index', headerName: 'Index', width: 70 },
     { field: 'email', headerName: 'Email', width: 130},
     { field: 'userName', headerName: 'User Name', width: 130 },
     { field: 'specification', headerName: 'Specification', width: 130 },

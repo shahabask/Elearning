@@ -12,7 +12,7 @@ export default function UserManagement() {
   
   // const [buttonClicked,setButtonClicked] = useState(false)
   const columns = [
-    { field: '_id', headerName: 'ID', width: 20 },
+    { field: 'index', headerName: 'Index', width: 20 },
     { field: 'email', headerName: 'Email', width: 130},
     { field: 'firstName', headerName: 'First name', width: 90 },
     { field: 'secondName', headerName: 'Last name', width: 90 },
