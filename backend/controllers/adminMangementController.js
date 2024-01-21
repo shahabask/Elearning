@@ -14,7 +14,7 @@ const loadUsers = asyncHandler(async (req, res) => {
   })
   .select('email firstName secondName _id isBlocked subscription');
 
-console.log(users)
+
 
   if (users) {
     res.status(201).json({ users });
