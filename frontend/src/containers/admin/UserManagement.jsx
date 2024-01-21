@@ -86,7 +86,7 @@ export default function UserManagement() {
       try {
         const res = await axiosInstance.get('/loadUsers');
         const rowsWithIndex = res.data.users.map((user, index) => ({ ...user, index: index + 1 }));
-        console.log('rowsWithIndex',rowsWithIndex)
+       
         setRows(rowsWithIndex);
        
         
