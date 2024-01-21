@@ -15,7 +15,7 @@ const sendResetMail = (name, email, token) => {
 
     const mailOptions = {
       from: 'codept100@gmail.com', 
-      to: 'codept100@gmail.com', // You should use the provided email, not a hardcoded one
+      to: email, // You should use the provided email, not a hardcoded one
       subject: "Reset your password",
       text: "Hello",
       html: `<p>Hi ${name}, this is your otp <b>${token}</b></p>`,
