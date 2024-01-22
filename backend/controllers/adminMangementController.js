@@ -12,7 +12,7 @@ const loadUsers = asyncHandler(async (req, res) => {
     model: 'Plan',
     select: 'subscriptionMode' // Assuming this is the field you want to populate in the 'mode' field
   })
-  .select('email firstName secondName _id isBlocked subscription');
+  .select('email firstName secondName _id isBlocked subscription phone');
 
 
 

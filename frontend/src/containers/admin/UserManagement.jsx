@@ -17,8 +17,8 @@ export default function UserManagement() {
     { field: 'firstName', headerName: 'First name', width: 90 },
     { field: 'secondName', headerName: 'Last name', width: 90 },
     { field: 'subscriptionMode', headerName: 'Subscribtion', width: 130 },
-    { field: 'phoneNo', headerName: 'Phone No', width: 130 },
-    { field: 'category', headerName: 'Category', width: 130 },
+    { field: 'phone', headerName: 'Phone No', width: 130 },
+    
     { field: 'isBlocked', headerName: 'Active', width: 130 ,renderCell: (params) => (
       <div className={`pill ${params.row.isBlocked ? 'inactive' : 'active'}`}>
       {params.row.isBlocked ? 'Inactive' : 'Active'}
@@ -85,8 +85,8 @@ export default function UserManagement() {
     const fetchData = async () => {
       try {
         const res = await axiosInstance.get('/loadUsers');
-        const rowsWithIndex = res.data.users.map((user, index) => ({ ...user, index: index + 1,subscriptionMode:user.subscription.subscriptionMode }));
-         console.log(rowsWithIndex[0])
+        const rowsWithIndex = res.data.users.map((user, index) => ({ ...user, index: index + 1,subscriptionMode:user.subscription.mode.subscriptionMode }));
+       
         setRows(rowsWithIndex);
        
         
