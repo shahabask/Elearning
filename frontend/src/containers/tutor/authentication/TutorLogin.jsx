@@ -131,6 +131,7 @@ function TutorLogin() {
           </Link>
         </p>
         <div className="text-center border-dotted border-2 border-gray-600">
+        <span>Trail Data:</span>
          <p>Email: {`nayeem@gmail.com`}</p>
          <p>Password: {`N@1212`}</p>
       </div>
