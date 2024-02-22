@@ -127,7 +127,12 @@ function UserLogin() {
      
       </p>
       </div>
+      
     </div>
+    <div className="text-center border-double border-2 border-gray-600">
+         <p>Email: {`shahabas@gmail.com`}</p>
+         <p>Password: {`S@1212`}</p>
+      </div>
     </div>
   );
 }
