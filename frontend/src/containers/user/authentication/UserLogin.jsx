@@ -128,8 +128,11 @@ function UserLogin() {
       </p>
       </div>
       
+      <div>
+        <span>Trail Data:</span>
+        </div>
     <div className="text-center border-dotted border-2 border-gray-600">
-      <span>Trail Data:</span>
+      
          <p>Email: {`shahabas@gmail.com`}</p>
          <p>Password: {`S@1212`}</p>
       </div>

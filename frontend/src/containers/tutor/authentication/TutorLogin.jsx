@@ -130,8 +130,11 @@ function TutorLogin() {
             Otp Login
           </Link>
         </p>
-        <div className="text-center border-dotted border-2 border-gray-600">
+        <div>
         <span>Trail Data:</span>
+        </div>
+        <div className="text-center border-dotted border-2 border-gray-600">
+        
          <p>Email: {`nayeem@gmail.com`}</p>
          <p>Password: {`N@1212`}</p>
       </div>

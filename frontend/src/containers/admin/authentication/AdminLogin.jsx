@@ -92,8 +92,11 @@ function AdminLogin() {
       <Link style={{color:"black",textDecoration:'none'}} to='/admin/forgotPassword'>Forgot Password</Link> | 
       <Link style={{color:"black",textDecoration:'none'}} to='/admin/otpLoginEmail' className="ms-2">Otp Login</Link>
       </p> */}
+      <div>
+        <span>Trail Data:</span>
+        </div>
       <div className="text-center border-dotted border-2 border-gray-600">
-      <span>Trail Data:</span>
+     
          <p>Email: {`nayeem@gmail.com`}</p>
          <p>Password: {`N@1212`}</p>
       </div>
