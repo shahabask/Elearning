@@ -39,7 +39,7 @@ useEffect(() => {
   // },[formErrors])
   const submitHandler = async (e) => {
     e.preventDefault();
-        setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
+       await setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
        toast.success(validate(firstName,secondName,email,password,confirmPassword))
 
        
