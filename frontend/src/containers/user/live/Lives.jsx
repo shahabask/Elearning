@@ -135,7 +135,7 @@ useEffect(()=>{
               ) : session.status === "ended" ? (
                 <div style={{ height: "45px" }}></div>
               ) : (
-                <div className="border-t-4 border-blue-500 border-solid justify-center rounded-full h-10 w-10 animate-spin"></div>
+               ''
               )}
             </div>
           ))}

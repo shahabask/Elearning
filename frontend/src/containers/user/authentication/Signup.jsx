@@ -32,31 +32,31 @@ useEffect(() => {
 },[navigate, userInfo])
 
 
-  useEffect(()=>{
-    if(Object.keys(formErrors).length==0&&isSubmit){
-        console.log()
-    }
-  },[formErrors])
+  // useEffect(()=>{
+  //   if(Object.keys(formErrors).length==0&&isSubmit){
+  //       console.log()
+  //   }
+  // },[formErrors])
   const submitHandler = async (e) => {
     e.preventDefault();
         setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
        setIsSubmit(true)
 
-       if (Object.keys(formErrors).length === 0){
-
-    
-    try{
+       
+       
+       try{
+      if (Object.keys(formErrors).length === 0){
 
              const res= await signUp({firstName,secondName,email,password}).unwrap()
           
              dispatch(setCredentials({...res}))
              navigate('/')
-
+            }
     }catch(err){
 
         toast.error(err?.data||err?.error)
     }
-  }
+  
   };
 
   const validate=(firstName,secondName,email,password,confirmPassword)=>{
