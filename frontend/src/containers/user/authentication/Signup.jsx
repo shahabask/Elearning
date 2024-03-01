@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { setCredentials } from '../../../slices/userSlice/authSlice';
 import { useSignUpMutation } from '../../../slices/userSlice/userApiSlices'; 
 import axiosInstance from '../../utils/axios'
+import axios from 'axios';
 function Signup() {
 
   const [firstName,setFirstName]=useState('')
@@ -49,7 +50,7 @@ useEffect(() => {
         if(Object.keys(localFormErrors).length === 0) {
 
             //  const res= await signUp({firstName,secondName,email,password}).unwrap()
-             const res=await axiosInstance.post('/register',{firstName,secondName,email,password})
+             const res=await axios.post('https://www.skillsync.website/api/register',{firstName,secondName,email,password})
           
              dispatch(setCredentials({...res.data}))
              navigate('/')
