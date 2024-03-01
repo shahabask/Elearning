@@ -49,8 +49,8 @@ useEffect(() => {
         const localFormErrors = validate(firstName, secondName, email, password, confirmPassword);
         if(Object.keys(localFormErrors).length === 0) {
 
-            //  const res= await signUp({firstName,secondName,email,password}).unwrap()
-             const res=await axios.post('https://www.skillsync.website/api/register',{firstName,secondName,email,password})
+             const res= await signUp({firstName,secondName,email,password}).unwrap()
+            //  const res=await axios.post('https://www.skillsync.website/api/register',{firstName,secondName,email,password})
           
              dispatch(setCredentials({...res.data}))
              navigate('/')
@@ -58,7 +58,7 @@ useEffect(() => {
         }
             
     }catch(err){
-     toast.err(err?.response?.data)
+     toast.err(err?.data)
     }
  
   
