@@ -36,9 +36,9 @@ function UserLogin() {
   const submitHandler = async (e) => {
     e.preventDefault();
         setFormErrors(validate(email,password))
-
-       
-    try {
+ if(Object.keys(formErrors).length==0){
+  toast.success(Object.keys(formErrors).length==0)
+ try {
       const res = await login({ email,password }).unwrap();
       
       dispatch(setCredentials({ ...res }));
@@ -50,6 +50,7 @@ function UserLogin() {
       toast.error(err?.data|| err?.error);
 
     }
+  }
   };
 
   const validate=(email,password)=>{
