@@ -39,8 +39,8 @@ useEffect(() => {
   // },[formErrors])
   const submitHandler = async (e) => {
     e.preventDefault();
-       await setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
-       toast.error(validate(firstName,secondName,email,password,confirmPassword))
+     setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
+      
 
        
        
@@ -57,8 +57,15 @@ useEffect(() => {
         }
             
     }catch(err){
-      
-        toast.error(err?.data||err?.error)
+      if (err.name === 'ValidationError') {
+        // Mongoose validation error
+        const errorMessages = Object.values(err.errors).map(error => error.message);
+        const errorMessage = errorMessages.join('<br>');
+        toast.error(errorMessage);
+    } else {
+        // Other types of errors
+        toast.error(err.message || 'An error occurred');
+    }
     }
  
   
