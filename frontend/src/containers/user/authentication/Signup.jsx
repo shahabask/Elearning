@@ -45,16 +45,16 @@ useEffect(() => {
        
        
        try{
-      if (Object.keys(formErrors).length === 0){
+     
 
              const res= await signUp({firstName,secondName,email,password}).unwrap()
           
              dispatch(setCredentials({...res}))
              navigate('/')
-            }
+            
     }catch(err){
-
-        toast.error('err?.data||err?.error')
+      
+        toast.error(err?.data||err?.error)
     }
   
   };
