@@ -45,27 +45,17 @@ useEffect(() => {
        
        
        try{
-        if(Object.keys(formErrors).length==0){
+        const localFormErrors = validate(firstName, secondName, email, password, confirmPassword);
+        if(Object.keys(localFormErrors).length === 0) {
 
              const res= await signUp({firstName,secondName,email,password}).unwrap()
           
              dispatch(setCredentials({...res}))
              navigate('/')
-        }else{
-          toast.error('fill all the field')
-              return
         }
             
     }catch(err){
-      if (err.name === 'ValidationError') {
-        // Mongoose validation error
-        const errorMessages = Object.values(err.errors).map(error => error.message);
-        const errorMessage = errorMessages.join('<br>');
-        toast.error(errorMessage);
-    } else {
-        // Other types of errors
-        toast.error(err?.response?.data || err?.data||'Fill all fields');
-    }
+     toast.err(err?.data)
     }
  
   
