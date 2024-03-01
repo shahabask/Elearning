@@ -58,8 +58,8 @@ useEffect(() => {
         }
             
     }catch(err){
-      console.log(err,'err')
-     toast.err(err?.data)
+      
+     toast.error(err?.data)
     }
  
   
