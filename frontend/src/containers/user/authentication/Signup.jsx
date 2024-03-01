@@ -64,7 +64,7 @@ useEffect(() => {
         toast.error(errorMessage);
     } else {
         // Other types of errors
-        toast.error(err.message || 'An error occurred');
+        toast.error(err?.response?.data || err?.data||'Fill all fields');
     }
     }
  
