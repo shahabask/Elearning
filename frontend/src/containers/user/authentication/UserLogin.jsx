@@ -38,12 +38,14 @@ function UserLogin() {
         setFormErrors(validate(email,password))
 
  try {
-      const res = await login({ email,password }).unwrap();
+  const localFormErrors=validate(email,password)
+  if(Object.keys(localFormErrors).length==0){
+   const res = await login({ email,password }).unwrap();
       
       dispatch(setCredentials({ ...res }));
       
       navigate('/');
-     
+    }
     } catch (err) {
 
       toast.error(err?.data|| err?.error);
@@ -65,8 +67,6 @@ function UserLogin() {
       if(!password){
         errors.password='Password is required'
       }else if(password.length<6){
-        errors.password='Invalid Password'
-      }else if(password.length>10){
         errors.password='Invalid Password'
       }
       return errors

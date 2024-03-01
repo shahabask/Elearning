@@ -51,13 +51,14 @@ useEffect(() => {
 
              const res= await signUp({firstName,secondName,email,password}).unwrap()
             //  const res=await axios.post('https://www.skillsync.website/api/register',{firstName,secondName,email,password})
-          
+             console.log(res,'res')
              dispatch(setCredentials({...res.data}))
              navigate('/')
              toast.success('successfully registered')
         }
             
     }catch(err){
+      console.log(err,'err')
      toast.err(err?.data)
     }
  

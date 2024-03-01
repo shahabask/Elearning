@@ -14,14 +14,7 @@ const stripe = new Stripe('sk_test_51O9tFFSDsPPMBnLnMdMtou8UwIWhDpQJl3hXgNqJCjBw
 const app = express();
 
 dotenv.config();
-const corsOptions = {
-  origin: 'https://www.skillsync.website',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,  // Allow sending cookies
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 connectDB();
 app.use(cookieParser());
 app.use(express.json());
