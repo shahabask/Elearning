@@ -6,7 +6,7 @@ import { useDispatch,useSelector} from 'react-redux';
 import { toast } from 'react-toastify';
 import { setCredentials } from '../../../slices/userSlice/authSlice';
 import { useSignUpMutation } from '../../../slices/userSlice/userApiSlices'; 
-
+import axiosInstance from '../../utils/axios'
 function Signup() {
 
   const [firstName,setFirstName]=useState('')
@@ -48,10 +48,12 @@ useEffect(() => {
         const localFormErrors = validate(firstName, secondName, email, password, confirmPassword);
         if(Object.keys(localFormErrors).length === 0) {
 
-             const res= await signUp({firstName,secondName,email,password}).unwrap()
+            //  const res= await signUp({firstName,secondName,email,password}).unwrap()
+             const res=await axiosInstance.post('/register',{firstName,secondName,email,password})
           
-             dispatch(setCredentials({...res}))
+             dispatch(setCredentials({...res.data}))
              navigate('/')
+             toast.success('successfully registered')
         }
             
     }catch(err){
