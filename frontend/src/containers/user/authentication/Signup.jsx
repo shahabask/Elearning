@@ -40,7 +40,7 @@ useEffect(() => {
   const submitHandler = async (e) => {
     e.preventDefault();
         setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
-       setIsSubmit(true)
+       
 
        
        
@@ -54,7 +54,7 @@ useEffect(() => {
             }
     }catch(err){
 
-        toast.error(err?.data||err?.error)
+        toast.error('err?.data||err?.error')
     }
   
   };
