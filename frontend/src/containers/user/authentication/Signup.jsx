@@ -42,7 +42,8 @@ useEffect(() => {
         setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
        
 
-       
+        if(Object.keys(formErrors).length==0){
+          toast.success(Object.keys(formErrors).length==0)
        
        try{
      
@@ -56,6 +57,10 @@ useEffect(() => {
       
         toast.error(err?.data||err?.error)
     }
+  }else{
+    toast.success('please fill')
+    return;
+  }
   
   };
 

@@ -47,9 +47,12 @@ function UserLogin() {
      
     } catch (err) {
 
-      toast.error(err?.data|| err?.error);
+      // toast.error(err?.data|| err?.error);
 
     }
+  }else{
+    toast.success('please fill')
+    return;
   }
   };
 
