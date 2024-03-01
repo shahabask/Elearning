@@ -58,7 +58,7 @@ useEffect(() => {
         }
             
     }catch(err){
-     toast.err(err?.data)
+     toast.err(err?.response?.data)
     }
  
   
