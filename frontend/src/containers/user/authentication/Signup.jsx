@@ -40,27 +40,23 @@ useEffect(() => {
   const submitHandler = async (e) => {
     e.preventDefault();
         setFormErrors(validate(firstName,secondName,email,password,confirmPassword))
-       
+       toast.success(validate(firstName,secondName,email,password,confirmPassword))
 
-        if(Object.keys(formErrors).length==0){
-          toast.success(Object.keys(formErrors).length==0)
        
-       try{
+       
+    //    try{
      
 
-             const res= await signUp({firstName,secondName,email,password}).unwrap()
+    //          const res= await signUp({firstName,secondName,email,password}).unwrap()
           
-             dispatch(setCredentials({...res}))
-             navigate('/')
+    //          dispatch(setCredentials({...res}))
+    //          navigate('/')
             
-    }catch(err){
+    // }catch(err){
       
-        toast.error(err?.data||err?.error)
-    }
-  }else{
-    toast.success('please fill')
-    return;
-  }
+    //     toast.error(err?.data||err?.error)
+    // }
+ 
   
   };
 

@@ -36,8 +36,7 @@ function UserLogin() {
   const submitHandler = async (e) => {
     e.preventDefault();
         setFormErrors(validate(email,password))
- if(Object.keys(formErrors).length==0){
-  toast.success(Object.keys(formErrors).length==0)
+
  try {
       const res = await login({ email,password }).unwrap();
       
@@ -47,13 +46,10 @@ function UserLogin() {
      
     } catch (err) {
 
-      // toast.error(err?.data|| err?.error);
+      toast.error(err?.data|| err?.error);
 
     }
-  }else{
-    toast.success('please fill')
-    return;
-  }
+
   };
 
   const validate=(email,password)=>{
