@@ -101,7 +101,7 @@ useEffect(() => {
       <h3 className="text-center">Sign Up</h3>
       <div className="mb-3">
         <input type="text" value={firstName} placeholder="Enter first name" onChange={(e) => setFirstName(e.target.value)} className="form-control" />
-        <p style={{ color: 'red' }}>{formErrors.userName}</p>
+        <p style={{ color: 'red' }}>{formErrors.firstName}</p>
       </div>
       <div className="mb-3">
         <input type="text" value={secondName} placeholder="Enter second name" onChange={(e) => setSecondName(e.target.value)} className="form-control" />
