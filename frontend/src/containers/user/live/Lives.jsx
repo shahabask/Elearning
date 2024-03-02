@@ -77,7 +77,7 @@ useEffect(()=>{
          {liveSessions.map((session) => (
             <div
               key={session.id}
-              className="flex flex-col bg-fdf8ee rounded-3xl p-6"
+              className="flex flex-col bg-orange-50 rounded-3xl p-6"
             >
               <h2 className="text-lg font-medium tracking-tighter text-black mb-2">
                 {session.name}
