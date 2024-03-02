@@ -77,7 +77,7 @@ useEffect(()=>{
          {liveSessions.map((session) => (
             <div
               key={session.id}
-              className="flex flex-col bg-purple-400 rounded-3xl p-6"
+              className="flex flex-col bg-fdf8ee rounded-3xl p-6"
             >
               <h2 className="text-lg font-medium tracking-tighter text-black mb-2">
                 {session.name}
@@ -127,9 +127,7 @@ useEffect(()=>{
                 </button>
               ) : session.status === "ended" ? (
                 <div style={{ height: "45px" }}></div>
-              ) : (
-                <div className="border-t-4 border-blue-500 border-solid justify-center rounded-full h-10 w-10 animate-spin"></div>
-              )}
+              ) : ''}
             </div>
           ))}
         </div>)}
