@@ -114,7 +114,7 @@ const [endDate,setEndDate]=useState(null)
 
   return (
     
-    <div className="plan-container lg:flex " style={{ backgroundColor: 'rgba(224, 176, 255, 0.2)',minHeight:'100vh'}} >
+    <div className="plan-container lg:flex bg-slate-200" style={{minHeight:'100vh'}} >
      <div style={{height:'72px'}}></div>
       {isSubscriptionActive ? (
       <div className="plan-container">

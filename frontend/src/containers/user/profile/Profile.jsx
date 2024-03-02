@@ -92,7 +92,7 @@ export default function Profile() {
    : '';
    
    return (
-     <div style={{ minHeight: "100vh", backgroundColor: "	#fcdad1" }}>
+     <div style={{ minHeight: "100vh"}} className="bg-slate-200">
        <div className="container ">
          <div className="row gutters row-with-padding ">
            <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
