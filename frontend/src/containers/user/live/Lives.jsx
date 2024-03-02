@@ -69,7 +69,7 @@ useEffect(()=>{
   return (
     <>
       <div style={{ height: "72px" }}></div>
-      <div className="bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 h-auto p-8" style={{minHeight:'60vh'}}>
+      <div className="bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 p-8" style={{minHeight:'65vh'}}>
       {liveSessions.length === 0 ? (
         renderNoLiveScheduled()
       ) : (
