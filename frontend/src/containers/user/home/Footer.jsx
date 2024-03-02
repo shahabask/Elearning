@@ -23,32 +23,30 @@ const Footer = () => {
       // transition={{ duration: 1 }}
       className="bg-Teal"
     >
-      <div className="px-5 py-1 grid md:grid-cols-4 overflow-none sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 place-items-start gap-4 text-black" style={{backgroundColor:'#FDF8EE',border:'1px solid grey'}}>
-        <div>
-          <div className="font-bold mb-6">Book Store</div>
+      <div className="px-5 py-1  grid md:grid-cols-3 overflow-none sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 place-items-start gap-4 text-black" style={{backgroundColor:'#FDF8EE',border:'1px solid grey'}}>
+        <div >
+          <div className="font-bold mb-6">SkillSync</div>
           <p className="text-sm leading-7">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo neque
-            saepe cumque. Veritatis sunt commodi
-          </p>
+          Empowering Tomorrow's Leaders Today. Elevate your skills, embrace industry trends, and stay ahead in your learning journey   </p>
         </div>
-        <div>
+     
+        <div className="w-full flex items-center justify-center">
+          <div >
           <div className="font-bold mb-6">Services</div>
           <div className="flex flex-col gap-4">
-          <Link to="/" className="text-sm" style={linkStyle}>
-        Web Design
+          <Link to="/lives" className="text-sm text-center hover:ring-1 hover:ring-gray-500 transition duration-300 rounded-full ease-in-out" style={linkStyle}>
+        Lives
       </Link>
-      <Link to="/" className="text-sm " style={linkStyle}>
-        Web Development
+      <Link to="/courses" className="text-sm text-center hover:ring-1 hover:ring-gray-500 transition duration-300 rounded-full ease-in-out" style={linkStyle}>
+       Courses
       </Link>
-      <Link to="/" className="text-sm" style={linkStyle}>
-        Science
+      <Link to="/plans" className="text-sm text-center hover:ring-1 hover:ring-gray-500 transition duration-300 rounded-full ease-in-out" style={linkStyle}>
+       Plans
       </Link>
-      <Link to="/" className="text-sm" style={linkStyle}>
-        Digital Marketing
-      </Link>
+     
           </div>
-        </div>
-        <div >
+        </div></div>
+        {/* <div >
           <div className="font-bold mb-6">Company</div>
           <div className="flex flex-col gap-4">
           <Link to="/" className="text-sm hover:underline" style={{ color: 'black', textDecoration: 'none' }}>
@@ -64,11 +62,12 @@ const Footer = () => {
         Terms & Conditions
       </Link>
           </div>
-        </div>
+        </div> */}
+        <div className="w-full flex items-center justify-center">
         <div>
           <div className="font-bold mb-6">Follow us</div>
-          <div className="text-xs mb-4">skillexlearning@gmail.com</div>
-          <div className="text-sm">+959883271929</div>
+          <div className="text-xs text-center mb-4 hover:cursor-pointer hover:ring-1 hover:ring-gray-500 transition duration-300 rounded-full ease-in-out"><Link to="mailto:skillsyncwebsite@gmail.com">skillsyncwebsite@gmail.com</Link></div>
+          <div className="text-sm">+918086905555</div>
           <div className="flex gap-4 mt-4">
           <Link to="/" className="hover:scale-110 text-xl">
         <BsFacebook />
@@ -83,7 +82,7 @@ const Footer = () => {
         <BsPinterest />
       </Link>
           </div>
-        </div>
+        </div></div>
       </div>
     </motion.div>
   );

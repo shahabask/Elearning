@@ -45,6 +45,7 @@ function UserLogin() {
       dispatch(setCredentials({ ...res }));
       
       navigate('/');
+      toast.success('Successfully Logged In')
     }
     } catch (err) {
 

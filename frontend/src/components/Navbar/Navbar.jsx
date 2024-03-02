@@ -68,7 +68,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar${isHomeRoute ? '-home' : ''}`}>
+      <nav className={`navbar-home`}>
         <a href="#">
           <img src={img} alt="Logo" />
         </a>
