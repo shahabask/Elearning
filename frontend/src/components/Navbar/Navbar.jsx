@@ -68,7 +68,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar-home`}>
+      <nav className={`navbar-home rounded-b-md`}>
         <a href="#">
           <img src={img} alt="Logo" />
         </a>
@@ -112,11 +112,7 @@ const Navbar = () => {
               <li>
                 <Link to="/login"> <FontAwesomeIcon icon={faSignInAlt} /></Link>
               </li>
-              {/* <li>
-  <Link to="/login" className="profile-icon">
-    <span role="img" aria-label="user">👤</span>
-  </Link>
-</li> */}
+             
               </>
             )}
           </ul>

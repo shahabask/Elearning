@@ -64,7 +64,7 @@ useEffect(()=>{
   };
 
   const renderNoLiveScheduled = () => (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center" style={{minHeight:'60vh'}}>
       <div className="text-center">
         <p className="text-2xl font-semibold text-white mb-10 pb-5">
           No live sessions scheduled.
@@ -76,7 +76,7 @@ useEffect(()=>{
   return (
     <>
       <div style={{ height: "72px" }}></div>
-      <div className="bg-gradient-to-r from-purple-400 via-purple-600 to-purple-400 min-h-screen p-8">
+      <div className="bg-gradient-to-r from-purple-400 via-purple-600 to-purple-400 p-8 h-auto" >
       {liveSessions.length === 0 ? (
         renderNoLiveScheduled()
       ) : (
