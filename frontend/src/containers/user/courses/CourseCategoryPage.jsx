@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import Category from "./Category";
 import CourseCard from "./Course";
 import axiosInstance from "../../utils/axios";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 function CourseCategoryPage() {
   const [coursesData, setCoursesData] = useState([]);
@@ -16,24 +14,16 @@ function CourseCategoryPage() {
   const [categoriesData, setCategoriesData] = useState([]);
   const [currentCategoryPage, setCurrentCategoryPage] = useState(1);
   const [sortOrder, setSortOrder] = useState("AZ");
-  const {userInfo}=useSelector((state)=>state.auth)
-
-  const navigate=useNavigate()
 
   useEffect(() => {
-    if(userInfo){
-
-      fetchData();
-    }else{
-      navigate("/login")
-    }
+    fetchData();
   }, []);
 
   const fetchData = async () => {
     try {
       const response = await axiosInstance.get("/courseCategoryList");
       setCoursesData(response.data.courses);
-      
+      console.log(response.data.courses,'courses')
       setCategoriesData(response.data.categories);
       setUniqueSubCategories([
         ...new Set(
@@ -52,7 +42,9 @@ function CourseCategoryPage() {
     const subCategoryMatch = selectedSubCategory
       ? course.subCategory==selectedSubCategory
       : true;
-    
+      // console.log(selectedSubCategory,'selectedsub')
+      // // console.log(course.subCategories,'cate')
+      // console.log(subCategoryMatch,'match') 
     return searchTermMatch && subCategoryMatch;
   });
 
@@ -111,8 +103,8 @@ function CourseCategoryPage() {
 
   return (
     <div
-      className="main-component pt-16"
-      style={{ backgroundColor: "rgba(224, 176, 255, 0.2)" }}
+      className="main-component pt-16 bg-slate-200"
+      // style={{ backgroundColor: "rgba(224, 176, 255, 0.2)" }}
     >
       <div className="text-center my-4">
         <h1 className="text-3xl font-semibold mb-4">Top Courses</h1>
@@ -204,7 +196,7 @@ function CourseCategoryPage() {
         )}
       </div>
 
-      <div className="text-center my-8">
+      <div className="text-center">
         <h1 className="text-3xl font-semibold mb-4">Categories</h1>
         <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
           {currentCategories.map((category) => (

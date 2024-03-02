@@ -2,30 +2,23 @@ import React, { useEffect, useState } from "react";
 import axiosInstance from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
 import socket from "../../utils/socket";
-import { useSelector } from "react-redux";
 
 
 
 function Lives() {
   const [liveSessions, setLiveSessions] = useState([]);
   //  const [liveUpdated,setLiveUpdated]=useState(false)
-  const {userInfo}=useSelector((state)=>state.auth)
-
-  const navigate=useNavigate()
+  
+  const navigate = useNavigate();
 
 
 
 useEffect(()=>{
-  if(userInfo){
-
+  fetchLiveDetails()
+  socket.on('track_live',()=>{
     fetchLiveDetails()
-    socket.on('track_live',()=>{
-      fetchLiveDetails()
-              // setLiveUpdated(!liveUpdated)
-            })
-  }else{
-    navigate('/login')
-  }
+            // setLiveUpdated(!liveUpdated)
+          })
 
          
 },[socket])
@@ -66,7 +59,7 @@ useEffect(()=>{
   const renderNoLiveScheduled = () => (
     <div className="flex items-center justify-center" style={{minHeight:'60vh'}}>
       <div className="text-center">
-        <p className="text-2xl font-semibold text-white mb-10 pb-5">
+        <p className="text-2xl font-semibold text-gray-600 mb-10 pb-5">
           No live sessions scheduled.
         </p>
         {/* Your additional styling and components for the theme */}
@@ -76,7 +69,7 @@ useEffect(()=>{
   return (
     <>
       <div style={{ height: "72px" }}></div>
-      <div className="bg-gradient-to-r from-purple-400 via-purple-600 to-purple-400 p-8 h-auto" >
+      <div className="bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 h-auto p-8" style={{minHeight:'60vh'}}>
       {liveSessions.length === 0 ? (
         renderNoLiveScheduled()
       ) : (
@@ -135,7 +128,7 @@ useEffect(()=>{
               ) : session.status === "ended" ? (
                 <div style={{ height: "45px" }}></div>
               ) : (
-               ''
+                <div className="border-t-4 border-blue-500 border-solid justify-center rounded-full h-10 w-10 animate-spin"></div>
               )}
             </div>
           ))}
