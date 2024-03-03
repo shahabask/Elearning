@@ -1,6 +1,6 @@
 import express from 'express'
 import {authUser,registerUser,logoutUser,verifyEmail,confirmOtp,resetPassword,otpLoginVerifyEmail,otpLogin,
-    courseCategoryListing,loadCategoryDetails,loadProfile,updateProfile,courseDetails,loadPlans,loadUpgradePlan,checkout,
+    courseCategoryListing,loadCategoryDetails,loadProfile,updateProfile,courseDetails,loadPlans,loadPublicPlans,loadUpgradePlan,checkout,
     confirmPayment,loadSubsriptionDetails,loadQuizzes,loadLiveDetails,loadQuizDetails,addQuizResult,loadVideos,
     loadMarkSheet,submitAssignment,rateCourse,loadCourseReviews,loadAssignmentData ,loadWatchHistory,deleteHistory
   ,addToHistory} from '../controllers/userController.js'
@@ -55,6 +55,7 @@ router.get('/loadProfile',authcheck,loadProfile)
 router.post('/updateProfile',authcheck,upload.single('image'),updateProfile)
 router.get('/loadCourseDetails/:courseId',authcheck,courseDetails)
 router.get('/loadPlans',authcheck,loadPlans)
+router.get('/public/loadPlans',loadPublicPlans)
 router.get('/loadUpgradePlan/:currentPlan',authcheck,loadUpgradePlan)
 router.post('/create-checkout',authcheck,checkout)
 router.post('/confirmPayment',confirmPayment)

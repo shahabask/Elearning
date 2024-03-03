@@ -346,7 +346,14 @@ const courseDetails = asyncHandler(async (req, res) => {
     res.status(500).json(`can't get the details`);
   }
 });
-
+const loadPublicPlans=asyncHandler(async(req,res)=>{
+  const plans = await Plan.find({});
+  if (plans) {
+    res.status(200).json({ plans });
+  } else {
+    res.status(400).json(`can't find the plans`);
+  }
+})
 const loadPlans = asyncHandler(async (req, res) => {
   const plans = await Plan.find({});
 
@@ -919,6 +926,7 @@ export {
   updateProfile,
   courseDetails,
   loadPlans,
+  loadPublicPlans,
   loadUpgradePlan,
   checkout,
   confirmPayment,

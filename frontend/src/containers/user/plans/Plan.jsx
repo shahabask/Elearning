@@ -77,6 +77,9 @@ const [dataArrived,setDataArrived]=useState(false)
   },[])
  const [plans,setPlans]=useState([])
   const fetchPlans=async()=>{
+    if(userInfo){
+
+   
   const response =await axiosInstance.get('/loadPlans')
    setPlans([...response.data.plans])
      setSubscription([response.data.subscription[0]])
@@ -93,6 +96,11 @@ const [dataArrived,setDataArrived]=useState(false)
         setSubscriptionActive(true)
         
      }
+    }else{
+     const response=await axiosInstance.get('/public/loadPlans')
+     setPlans([...response.data.plans])
+     setDataArrived(true)
+    }
      
   }
  
