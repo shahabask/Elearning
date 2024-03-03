@@ -9,6 +9,7 @@ import { useSpring, animated } from 'react-spring';
 import { Scrollbars } from 'react-custom-scrollbars';
 import PlanShimmer from './PlanShimmer';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 function PlanCard({ subscriptionMode, duration, price, benifits,userInfo,backgroundColor }) {
 
@@ -102,14 +103,14 @@ const [dataArrived,setDataArrived]=useState(false)
         
      }
     }else{
-      toast.success('started')
-     const response=await axiosInstance.get('https://www.skillsync.website/api/public/loadPlans')
-     toast.success(response.data)
+    
+     const response=await axios.get('https://www.skillsync.website/api/public/loadPlans')
+     
      setPlans([...response.data.plans])
      setDataArrived(true)
     }
   } catch (error) {
-      toast.error(error)
+     toast.error('something happened')
   }
   }
  
