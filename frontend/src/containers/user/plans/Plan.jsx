@@ -7,6 +7,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import { FaArrowCircleUp } from 'react-icons/fa';
 import { useSpring, animated } from 'react-spring';
 import { Scrollbars } from 'react-custom-scrollbars';
+import PlanShimmer from './PlanShimmer';
 
 function PlanCard({ subscriptionMode, duration, price, benifits,userInfo,backgroundColor }) {
 
@@ -66,6 +67,7 @@ const [subscription,setSubscription]=useState([])
 const [isSubscriptionActive,setSubscriptionActive]=useState(false)
 const [currentPlan,setCurrentPlan]=useState('')
 const [endDate,setEndDate]=useState(null)
+const [dataArrived,setDataArrived]=useState(false)
   const {userInfo}=useSelector((state)=>state?.auth)
   const navigate=useNavigate()
   useEffect(()=>{
@@ -85,7 +87,7 @@ const [endDate,setEndDate]=useState(null)
     
      setCurrentPlan(response.data.subscription[0].mode)
      const endDateISO = Date.parse(response.data.subscription[0].subscription.endDate);
-    
+     setDataArrived(true)
      const endDate = new Date(endDateISO);
 
      // Format endDate as "day/month/year"
@@ -116,7 +118,7 @@ const [endDate,setEndDate]=useState(null)
     
     <div className="plan-container lg:flex bg-slate-200" style={{minHeight:'100vh'}} >
      <div style={{height:'72px'}}></div>
-      {isSubscriptionActive ? (
+      {!dataArrived?<>{Array.from({ length: 3 }, (_, index) => (<PlanShimmer key={index}/>))}</> :isSubscriptionActive ? (
       <div className="plan-container">
        <div className="flex justify-center items-center h-full">
       <div className="bg-white rounded-lg p-8 shadow-lg max-w-md w-full">
