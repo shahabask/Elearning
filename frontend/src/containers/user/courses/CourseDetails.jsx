@@ -30,9 +30,7 @@ function CourseDetails() {
 
 
   const navigate=useNavigate()
-  if(!userInfo){
-    navigate('/login')
-  }
+ 
   const fetchCourseDetails = async () => {
     try {
       let response = await axiosInstance.get(`/loadCourseDetails/${courseId}`);
@@ -76,9 +74,12 @@ function CourseDetails() {
   }
 
   useEffect(() => {
+    if(!userInfo){
+      navigate('/login')
+    }
     fetchCourseDetails();
   }, [ratingSubmitted]);
-  
+
   return (
     <div>
       <section className="py-5 bg-slate-200" style={{minHeight: '100vh'}}>
