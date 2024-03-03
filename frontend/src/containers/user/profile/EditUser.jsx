@@ -160,7 +160,7 @@ function EditUser({ userData ,conformUpdation}) {
                     type="button"
                     id="submit"
                     name="submit"
-                    className="btn bg-blue-600 mt-3 hover:bg-blue-600 "
+                    className="btn bg-blue-600 mt-3 hover:bg-blue-600 text-white"
                     onClick={handleUpdate}
                   >
                     Update

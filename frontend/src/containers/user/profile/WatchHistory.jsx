@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { X, Trash2 } from 'react-feather'; // Import Feather icons
 import axiosInstance from '../../utils/axios';
 import { useNavigate } from 'react-router-dom';
+import WatchHistoryShimmer from './WatchHistoryShimmer';
 
 const videos = [
   {
@@ -39,6 +40,8 @@ function WatchHistory() {
 
     const [videoDetails,setVideoDetails]=useState([])
     const [isDeleted,setIsDeleted]=useState(false)
+    const [dataArrived,setDataArrived]=useState(false)
+
     const navigate=useNavigate()
     useEffect(()=>{
         fetchWatchHistory()
@@ -52,6 +55,7 @@ function WatchHistory() {
              setVideoDetails([])
         }else{
             setVideoDetails(response.data.videoDetails)
+            setDataArrived(true)
         }
        } catch(error) {
         console.log(error)
@@ -92,7 +96,17 @@ function WatchHistory() {
         <FontAwesomeIcon icon={faHistory} className="text-xl mr-2" />
         <h1 className="text-3xl font-bold">Watch History</h1>
       </div>
-      {videoDetails.length > 0 ? (
+      {!dataArrived?<> <div className="mt-4 flex justify-end">
+         <button onClick={handleClearHistory} className="text-red-500 hover:text-red-700 flex">
+           <Trash2 size={18} />
+           <span className="ml-2">Clear All History</span>
+         </button>
+       </div>
+        <div className='overflow-x-auto '>
+           
+          <div className="flex space-x-4 p-5">{Array.from({ length: 3 }, (_, index) => (
+            <WatchHistoryShimmer key={index} className="m-8 p-5"/>
+          ))}</div></div></>:videoDetails.length > 0 ? (
         <>
          <div className="mt-4 flex justify-end">
          <button onClick={handleClearHistory} className="text-red-500 hover:text-red-700 flex">

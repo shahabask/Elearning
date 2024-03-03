@@ -9,6 +9,7 @@ import { faHistory, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Assignment from "./Assignment.jsx";
 import WatchHistory from "./WatchHistory.jsx";
+import './ProfileShimmer.css'
 // import Assignment from "./Assignment.jsx";
 export default function Profile() {
   const [userData,setUserData]=useState()
