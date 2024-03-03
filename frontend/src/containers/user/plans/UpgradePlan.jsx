@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import axiosInstance from '../../utils/axios'
 import { loadStripe } from '@stripe/stripe-js';
 import { useParams } from 'react-router-dom';
+import PlanShimmer from './PlanShimmer';
 
 function PlanCard({ subscriptionMode, duration, price, benifits,userInfo,backgroundColor }) {
    
@@ -64,6 +65,7 @@ function UpgradePlan() {
 
   const {currentPlan}=useParams()
     const [plans,setPlans]=useState([])
+    const [dataArrived,setDataArrived]=useState(false)
     const {userInfo}=useSelector((state)=>state?.auth)
     useEffect(()=>{
        
@@ -76,14 +78,14 @@ function UpgradePlan() {
         const response =await axiosInstance.get(`/loadUpgradePlan/${currentPlan}`)
          setPlans([...response.data.plans])
       //  console.log(response.data.plans,'plans') 
-           
+      setDataArrived(true)
         }
   return (
-    <div className="plan-container " style={{ backgroundColor: 'rgba(224, 176, 255, 0.2)'}}>
+    <div className="plan-container bg-slate-200">
 {/* <div className="plan-container"> */}
 <div style={{height:'72px'}}></div>
 <div className='flex item-center justify-center' style={{minHeight:'90vh'}}>
-{
+{!dataArrived?<>{Array.from({ length: 3 }, (_, index) => (<PlanShimmer key={index}/>))}</> :
  
         plans.map((plan, index) => (
           <PlanCard key={index} {...plan} userInfo={userInfo} />
