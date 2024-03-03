@@ -8,6 +8,7 @@ import { FaArrowCircleUp } from 'react-icons/fa';
 import { useSpring, animated } from 'react-spring';
 import { Scrollbars } from 'react-custom-scrollbars';
 import PlanShimmer from './PlanShimmer';
+import { Toast } from 'react-bootstrap';
 
 function PlanCard({ subscriptionMode, duration, price, benifits,userInfo,backgroundColor }) {
 
@@ -97,7 +98,8 @@ const [dataArrived,setDataArrived]=useState(false)
         
      }
     }else{
-     const response=await axiosInstance.get('/public/loadPlans')
+     const response=await axiosInstance.get('https://www.skillsync.website/api/public/loadPlans')
+     
      setPlans([...response.data.plans])
      setDataArrived(true)
     }
