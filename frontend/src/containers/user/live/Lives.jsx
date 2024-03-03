@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import socket from "../../utils/socket";
 import SessionShimmer from "./SessionShimmer";
 import './liveCardShimmer.css'
+import axios from "axios";
 
 
 function Lives() {
@@ -27,7 +28,7 @@ useEffect(()=>{
   const fetchLiveDetails = async () => {
     try {
       
-      const response = await axiosInstance.get("/getLiveDetails");
+      const response = await axios.get("https://www.skillsync.website/api/getLiveDetails");
       setLiveSessions(response.data.lives);
       setDataArrived(true)
       

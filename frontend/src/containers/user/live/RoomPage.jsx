@@ -81,7 +81,7 @@ function RoomPage() {
   };
 
   return (
-    <div className="room-page flex flex-col items-center justify-center bg-gradient-to-r from-purple-400 to-purple-600 text-white">
+    <div className="room-page flex flex-col items-center justify-center bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 text-black">
 
     <div className="md:w-full s:w-3/6 h-screen rounded-lg shadow-lg overflow-hidden" ref={startMeeting} />
   

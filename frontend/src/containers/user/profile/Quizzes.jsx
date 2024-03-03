@@ -16,7 +16,7 @@ function Quizzes() {
     setDataArrived(true)
   }
   return (
-    <div style={{ height: "", backgroundColor: "	#fcdad1" }}>
+    <div style={{ height: ""}} className='bg-slate-200'>
     <div className='container'style={{paddingTop:'2rem'}}>
       {/* Header Row */}
       <div className='row '>

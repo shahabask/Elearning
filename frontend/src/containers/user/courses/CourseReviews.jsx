@@ -38,7 +38,7 @@ function CourseReviews() {
   return (
     <>
       <div style={{ height: '72px' }}></div>
-      <div className='bg-purple-100'>
+      <div className='bg-slate-200'>
 
         <button className="text-black text-sm px-4 py-2 rounded-full flex items-center hover:bg-white transition-colors" onClick={handleGoBack}>
       <FaArrowLeft className="mr-2" /> {/* Assuming you have an arrow-left icon */}

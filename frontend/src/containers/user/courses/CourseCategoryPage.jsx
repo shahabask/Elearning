@@ -4,6 +4,7 @@ import CourseCard from "./Course";
 import axiosInstance from "../../utils/axios";
 import './courseShimmer.css'
 import CourseShimmer from "./CourseShimmer";
+import axios from "axios";
 function CourseCategoryPage() {
   const [coursesData, setCoursesData] = useState([]);
   const [dataArrived,setDataArrived]=useState(false)
@@ -22,9 +23,9 @@ function CourseCategoryPage() {
 
   const fetchData = async () => {
     try {
-      const response = await axiosInstance.get("/courseCategoryList");
+      const response = await axios.get("https://www.skillsync.website/api/courseCategoryList");
       setCoursesData(response.data.courses);
-      console.log(response.data.courses,'courses')
+     
       setCategoriesData(response.data.categories);
       setUniqueSubCategories([
         ...new Set(
