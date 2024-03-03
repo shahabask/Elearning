@@ -90,7 +90,7 @@ const handleMouseLeave = () => {
   <div className="px-4 px-lg-5">
     {/* Heading Row */}
     <div className='flex justify-center'>
-    <div className="text-white my-4 py-1 text-xl text-center w-full bg-slate-200" style={{height:'60px' ,borderRadius:'7px' }}>
+    <div className="text-black my-4 py-1 text-xl text-center w-full bg-slate-200" style={{height:'60px' ,borderRadius:'7px' }}>
       <div className="h-50">
         <h1 className="m-0">{category[0]?.categoryName}</h1>
       </div>
@@ -127,7 +127,7 @@ const handleMouseLeave = () => {
 
     {/* Call to Action */}
     <div className='flex justify-center'>
-    <div className=" text-white my-4 py-1 text-xl text-center w-full bg-slate-200" style={{height:'60px' ,borderRadius:'7px'}}>
+    <div className=" text-black my-4 py-1 text-xl text-center w-full bg-slate-200" style={{height:'60px' ,borderRadius:'7px'}}>
       <div className="h-50">
         <h1 className="m-0">Courses</h1>
       </div>

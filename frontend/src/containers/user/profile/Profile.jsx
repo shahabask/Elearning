@@ -18,12 +18,12 @@ export default function Profile() {
    const [showAssignment,setShowAssignment]=useState(false)
    const [showWatchHistory,setShowWatchHistory]=useState(false)
    const [subcategories,setSubcategories]=useState('')
-
+   const [userUpdated,setUserUpdated]=useState(false)
   useEffect(()=>{
     
   fetchUser()
  
-  },[])
+  },[userUpdated])
   const fetchUser=async()=>{
    try {
     
@@ -35,6 +35,9 @@ export default function Profile() {
      console.log('error',error.response||error.error)
    }
    
+  }
+  const checkProfileUpdate=()=>{
+     setUserUpdated(!userUpdated)
   }
    const handleEditClick = () => {
      setShowForm((prevShowForm) => !prevShowForm);
@@ -110,7 +113,7 @@ export default function Profile() {
                      {/* <h6 className="user-email">{userData?.secondName}</h6> */}
                    </div>
                    <div className="centered-container">
-                     <div className="row-container">
+                     <div className="row-container cursor-pointer">
                        <div className="colum" onClick={handleEditClick}>
                          <i className="fas fa-edit pt-1" style={{color:"purple"}}></i>
                          <span className="icon"style={{marginLeft:"10px"}}>Edit</span>
@@ -147,7 +150,7 @@ export default function Profile() {
              </div>
            </div>
            <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 mb-5 mt-5">
-           {showForm ? <EditUser userData={userData}  />:showQuiz?<div ><Quizzes quizData={'quizData'} className=''/></div>
+           {showForm ? <EditUser userData={userData}  conformUpdation={checkProfileUpdate}/>:showQuiz?<div ><Quizzes quizData={'quizData'} className=''/></div>
            :showMarkSheet?<MarkSheet/>:showAssignment?<Assignment/> :showWatchHistory?<WatchHistory/>:( 
        <div className="bg-white shadow-md p-4 rounded-lg" style={{minHeight:'50vh'}}>
          <h1 className="text-3xl font-bold mb-4 text-purple-800" style={{ textTransform: 'uppercase' }}>{userData?.firstName}</h1>

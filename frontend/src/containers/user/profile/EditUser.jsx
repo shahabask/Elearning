@@ -3,7 +3,7 @@ import { FaImage, FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
 import axiosInstance from "../../utils/axios";
 
-function EditUser({ userData }) {
+function EditUser({ userData ,conformUpdation}) {
   const [firstName, setFirstName] = useState(userData?.firstName || ""); // Initialize with an empty string
   const [secondName, setSecondName] = useState(userData?.secondName || ""); // Initialize with an empty string
   const [phone, setPhone] = useState(userData?.phone || ""); // Initialize with an empty string
@@ -23,7 +23,7 @@ function EditUser({ userData }) {
       phone,
       image: imageFileName,
     };
-
+  
     try {
       
       const response = await axiosInstance.post(
@@ -37,6 +37,7 @@ function EditUser({ userData }) {
       );
       if (response.data === "updated") {
         toast.success("updated successfully");
+        conformUpdation()
       } else {
         toast.success("i dont know");
       }
@@ -159,7 +160,7 @@ function EditUser({ userData }) {
                     type="button"
                     id="submit"
                     name="submit"
-                    className="btn btn-primary mt-3"
+                    className="btn bg-blue-600 mt-3 hover:bg-blue-600 "
                     onClick={handleUpdate}
                   >
                     Update
