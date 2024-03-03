@@ -6,8 +6,8 @@ import ReactPlayer from 'react-player';
 
 const Playlist = () => {
 
-  const [videoThumbnails, setVideoThumbnails] = useState([]);
- const [courseImage,setCourseImage]=useState('')
+  
+  const [courseImage,setCourseImage]=useState('')
   const [videoDetails,setVideoDetails]=useState([])
   const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
   const { courseId } = useParams();
@@ -21,7 +21,7 @@ const Playlist = () => {
      try {
        const response=await axiosInstance.get(`/loadVideoDetails/${courseId}`)
       //  setVideoDetails([...response.data.videos[0].videos]) 
-      setVideoDetails(response.data.videos[0].videos)
+       setVideoDetails(response.data.videos[0].videos)
        setSelectedVideo(response.data.videos[0].videos[0])
      
        const imagePath = response.data.videos[0].image;
@@ -58,7 +58,7 @@ setCourseImage(imageName);
   const dynamicVideos = videoDetails.filter((video) => video?.videoUrl !== selectedVideo?.videoUrl);
 
   return (
-    <div className="blog-single bg-gray-100 pt-20 pb-20" style={{ backgroundColor: 'rgba(224, 176, 255, 0.2)' }}>
+    <div className="blog-single bg-slate-200 pt-20 pb-20" >
       <div className="container">
         <div className="flex flex-wrap">
           {/* Dynamic rendering of the selected video */}
