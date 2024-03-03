@@ -71,7 +71,7 @@ function CourseDetails() {
 
   return (
     <div>
-      <section className="py-5" style={{minHeight: '100vh', backgroundColor: 'rgba(224, 176, 255, 0.2)'}}>
+      <section className="py-5 bg-slate-200" style={{minHeight: '100vh'}}>
       <div className="container px-4 px-lg-5 my-5" >
           <div style={{ height: '40px' }}></div>
           <div className="row gx-4 gx-lg-5 align-items-center  pt-5">

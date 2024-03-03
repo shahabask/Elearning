@@ -90,7 +90,7 @@ const handleMouseLeave = () => {
   <div className="px-4 px-lg-5">
     {/* Heading Row */}
     <div className='flex justify-center'>
-    <div className="text-white my-4 py-1 text-center w-full" style={{height:'60px' ,borderRadius:'7px',backgroundColor:'purple' }}>
+    <div className="text-white my-4 py-1 text-xl text-center w-full bg-slate-200" style={{height:'60px' ,borderRadius:'7px' }}>
       <div className="h-50">
         <h1 className="m-0">{category[0]?.categoryName}</h1>
       </div>
@@ -116,7 +116,7 @@ const handleMouseLeave = () => {
     <div>
       {category[0]?.subCategories?.map((subcategory, index) => (
         <button type="button" onClick={() => handleSubcategoryClick(subcategory)}
-         key={index} className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"> 
+         key={index} className="text-white bg-gradient-to-r from-slate-500 to-gray-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-slate-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"> 
          {subcategory}</button>
  
       ))}
@@ -127,7 +127,7 @@ const handleMouseLeave = () => {
 
     {/* Call to Action */}
     <div className='flex justify-center'>
-    <div className=" text-white my-4 py-1 text-center w-full" style={{height:'60px' ,borderRadius:'7px',backgroundColor:'purple'}}>
+    <div className=" text-white my-4 py-1 text-xl text-center w-full bg-slate-200" style={{height:'60px' ,borderRadius:'7px'}}>
       <div className="h-50">
         <h1 className="m-0">Courses</h1>
       </div>
@@ -210,7 +210,7 @@ const handleMouseLeave = () => {
             No courses in {selectedSubcategory} category
           </p>
           <div className="mt-4">
-            <div className="h-3 w-24 bg-danger rounded-full animate-pulse"></div>
+            <div className="h-3 w-24 bg-gradient-to-r from-slate-500 to-gray-300 rounded-full animate-pulse"></div>
           </div>
         </div>
       </div>

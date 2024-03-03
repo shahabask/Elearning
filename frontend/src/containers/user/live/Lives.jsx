@@ -3,7 +3,7 @@ import axiosInstance from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
 import socket from "../../utils/socket";
 import SessionShimmer from "./SessionShimmer";
-
+import './liveCardShimmer.css'
 
 
 function Lives() {
@@ -72,7 +72,7 @@ useEffect(()=>{
       <div style={{ height: "72px" }}></div>
       <div className="bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 p-8" style={{minHeight:'69vh'}}>
       {!dataArrived?<div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">{
-        Array.from({ length: 4 }, (_, index) => (<>
+        Array.from({ length: 2 }, (_, index) => (<>
           <SessionShimmer key={index} /></>
         ))
       }</div>:liveSessions.length === 0 ? (
