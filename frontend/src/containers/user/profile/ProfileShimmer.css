@@ -1,23 +1,46 @@
 /* YourComponent.css */
 .shimmer-card {
-    position: relative;
-    overflow: hidden;
-  }
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-line {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  margin-bottom: 8px;
+  border-radius: 4px;
   
-  .shimmer-line {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite linear;
-    margin-bottom: 8px;
-    border-radius: 4px;
+}
+.shimmer-line-quiz {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  opacity: 0.8; /* Adjust the opacity to your preference for a softer look */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity changes */
+}
+.shimmer-content {
+  height: 20px; /* Set a height to ensure visibility */
+}
+.shimmer-line-marksheet{
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.7s infinite linear;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  height: 35px;
+  width: 180px;
+ 
+}
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -200%;
   }
-  
-  @keyframes shimmer {
-    0% {
-      background-position: -200%;
-    }
-    100% {
-      background-position: 200%;
-    }
+  100% {
+    background-position: 200%;
   }
-  
+}

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../utils/axios';
 import { Scrollbars } from 'react-custom-scrollbars';
+import MarkShimmerAssignment from './shimmer/MarkShimmerAssignment';
+import MarkShimmerQuiz from './shimmer/MarkShimmerQuiz';
 
 
 function MarkSheet() {
   const [quizzes, setQuizzes] = useState([]);
   const [assignments, setAssignments] = useState([]);
-
+  const [dataArrived,setDataArrived]=useState(false)
 
 
 
@@ -36,6 +38,7 @@ function MarkSheet() {
          
          setQuizzes(sortedQuizzes);
       setAssignments(response.data.assignments);
+      setDataArrived(true)
     } catch (error) {
       console.error('Error fetching mark sheet data:', error);
     }
@@ -53,7 +56,7 @@ function MarkSheet() {
 
 
   {/* Table of Assignment Results */}
- {assignments.length!=0 ?<table className=" bg-white mb-6">
+ {!dataArrived?<MarkShimmerAssignment/>:assignments.length!=0 ?<table className=" bg-white mb-6">
         <thead>
           <tr>
             <th className="py-2 px-4">Assignment Name</th>
@@ -62,7 +65,7 @@ function MarkSheet() {
           </tr>
         </thead>
         <tbody>
-          {assignments.map((assignment, index) => (
+          {!dataArrived?<MarkShimmerQuiz/>:assignments.map((assignment, index) => (
             <tr key={index} className={index % 2 === 0 ? 'bg-purple-100' : ''}>
               <td className="py-2 px-4">{assignment.name}</td>
               <td className="py-2 px-4">{assignment.subject}</td>

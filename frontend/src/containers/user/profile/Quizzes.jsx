@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import QuizCard from '../../../components/user/cards/QuizCard'
 import  axiosInstance  from '../../utils/axios'
+import QuizShimmer from './shimmer/QuizShimmer'
 function Quizzes() {
  const [quizzes,setQuizzes]=useState([])
+ const [dataArrived,setDataArrived]=useState(false)
   useEffect(()=>{
     fetchQuizzes()
-    // console.log('quizzes',quizzes)
+    
   },[])
   const fetchQuizzes=async()=>{
     const response=await axiosInstance.get('/loadQuizzes')
     setQuizzes(response.data.quizzes)
-    
+    setDataArrived(true)
   }
   return (
     <div style={{ height: "", backgroundColor: "	#fcdad1" }}>
@@ -30,7 +32,7 @@ function Quizzes() {
 
       {/* Cards Row */}
       <div className='row mt-3'>
-      {quizzes.map((quiz, index) => (
+      {!dataArrived?<>{Array.from({ length: 3 }, (_, index) => (<QuizShimmer key={index}/>))}</>:quizzes.map((quiz, index) => (
   <div className='col my-2' key={index}>
     <QuizCard quizData={quiz} />
   </div>

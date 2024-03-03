@@ -3,6 +3,7 @@ import axiosInstance from '../../utils/axios';
 import axios from 'axios';
 import Assignments from '../../../../../backend/models/assignmentModel';
 import { toast } from 'react-toastify';
+import AssignmentShimmer from './shimmer/AssignmentShimmer';
 // import {axiosInstance} from '../../utils/axios';
 
 
@@ -12,6 +13,8 @@ function Assignment() {
 
   const [assignments,setAssignments]=useState([])
   const [submitted,setSubmitted]=useState(false)
+  const [dataArrived,setDataArrived]=useState(false)
+
  function formatDate(dateString) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const formattedDate = new Date(dateString).toLocaleDateString('en-US', options);
@@ -33,7 +36,7 @@ function Assignment() {
 
    const response=await axiosInstance.get('/loadAssignmentsData') 
      setAssignments(response.data.pendingAssignment)
-    
+    setDataArrived(true)
   }
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -67,7 +70,7 @@ toast.success('successfully submitted')
   return (
     <div className="max-w-screen-xl mx-auto p-8 bg-white rounded-md shadow-md">
       <h2 className="text-3xl font-bold mb-6">Assignment Submission</h2>
-      {assignments.length > 0 ? (
+      {!dataArrived?<AssignmentShimmer/>:assignments.length > 0 ? (
        <div className='flex'>
         <div>
        <div className="mb-6">
