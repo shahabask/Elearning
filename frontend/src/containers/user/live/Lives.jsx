@@ -10,7 +10,7 @@ function Lives() {
   //  const [liveUpdated,setLiveUpdated]=useState(false)
   
   const navigate = useNavigate();
-
+  const [dataArrived,setDataArrived]=useState(false)
 
 
 useEffect(()=>{
@@ -28,7 +28,7 @@ useEffect(()=>{
       
       const response = await axiosInstance.get("/getLiveDetails");
       setLiveSessions(response.data.lives);
-     
+      setDataArrived(true)
       
     } catch (error) {
       console.log("error",error);
@@ -70,7 +70,11 @@ useEffect(()=>{
     <>
       <div style={{ height: "72px" }}></div>
       <div className="bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 p-8" style={{minHeight:'69vh'}}>
-      {liveSessions.length === 0 ? (
+      {!dataArrived?<div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">{
+        Array.from({ length: 4 }, (_, index) => (<>
+          <SessionShimmer key={index} /></>
+        ))
+      }</div>:liveSessions.length === 0 ? (
         renderNoLiveScheduled()
       ) : (
         <div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
