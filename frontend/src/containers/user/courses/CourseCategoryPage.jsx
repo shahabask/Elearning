@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import Category from "./Category";
 import CourseCard from "./Course";
 import axiosInstance from "../../utils/axios";
-
+import './courseShimmer.css'
+import CourseShimmer from "./CourseShimmer";
 function CourseCategoryPage() {
   const [coursesData, setCoursesData] = useState([]);
-
+  const [dataArrived,setDataArrived]=useState(false)
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedSubCategory, setSelectedSubCategory] = useState("");
   const [currentCoursePage, setCurrentCoursePage] = useState(1);
@@ -30,6 +31,7 @@ function CourseCategoryPage() {
           response?.data?.courses?.map((course) => course.subCategory)
         ),
       ]);
+      setDataArrived(true)
     } catch (error) {
       console.log("error", error);
     }
@@ -175,7 +177,9 @@ function CourseCategoryPage() {
 
         {/* Courses Display */}
         <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-  {currentCourses.length === 0 ? (
+  {!dataArrived?<>{Array.from({ length: 3 }, (_, index) => (
+            <CourseShimmer key={index} className="m-8 p-5"/>
+          ))}</>:currentCourses.length === 0 ? (
     <div style={{height:'400px'}} className="justify-content-center">
     <p className="text-black mt-5 pt-5" style={{fontSize:'26px'}}>No results found.</p></div>
   ) : (
@@ -186,7 +190,12 @@ function CourseCategoryPage() {
 </div>
 
         {/* Load More Button */}
-        {filteredCourses.length > itemsPerPage && (
+        {!dataArrived?<><button
+      className="shimmer-button text-white shadow hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+      
+    >
+     Load More Courses
+    </button></>:filteredCourses.length > itemsPerPage && (
           <button
             className="text-white shadow bg-gradient-to-r from-purple-700 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
             onClick={handleLoadMoreCourses}

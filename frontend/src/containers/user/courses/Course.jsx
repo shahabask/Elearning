@@ -37,7 +37,7 @@ function CourseCard({_id,image,course,description,categoryName,rating}) {
         }
       }
   return (
-    <div className="w-60 h-96 bg-neutral-100 rounded-3xl text-black p-4 flex flex-col items-start justify-between gap-3 hover:bg-pink-200 hover:shadow-2xl hover:text-white hover:shadow-purple-200 transition-shadow mx-3 my-5">
+    <div className="w-60 h-96 bg-neutral-50 rounded-3xl text-black p-4 flex flex-col items-start justify-between gap-3 hover:bg-sky-50 hover:shadow-2xl hover:text-white hover:shadow-sky-50 transition-shadow mx-3 my-5">
     <div className="w-52 h-40 bg-sky-300 rounded-2xl overflow-hidden">
       <img className="w-full h-full object-cover" src={modifiedImagePath} alt="Course Image" />
     </div>
