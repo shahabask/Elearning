@@ -349,7 +349,7 @@ const courseDetails = asyncHandler(async (req, res) => {
 const loadPublicPlans=asyncHandler(async(req,res)=>{
   const plans = await Plan.find({});
   if (plans) {
-    res.status(200).json({ plans });
+    res.status(200).json({ plans:plans });
   } else {
     res.status(400).json(`can't find the plans`);
   }
