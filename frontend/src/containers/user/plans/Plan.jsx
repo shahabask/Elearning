@@ -102,6 +102,7 @@ const [dataArrived,setDataArrived]=useState(false)
         
      }
     }else{
+      toast.success('started')
      const response=await axiosInstance.get('https://www.skillsync.website/api/public/loadPlans')
      toast.success(response.data)
      setPlans([...response.data.plans])
