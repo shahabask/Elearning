@@ -10,6 +10,7 @@ import StarRating from 'react-star-rating-component';
 // index.js or your main stylesheet
 import '@fortawesome/fontawesome-free/css/all.css';
 import { FaEye } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 function CourseDetails() {
   const [courseInfo, setCourseInfo] = useState('');
@@ -22,11 +23,16 @@ function CourseDetails() {
   const [ratingSubmitted,setRatingSubmitted]=useState(false)
   const [totalAverageRating,setTotalAverageRating]=useState(0)
   const [review,setReview]=useState('')
-  useEffect(() => {
-    fetchCourseDetails();
-  }, [ratingSubmitted]);
+
+  const {userInfo}=useSelector((state)=>state.auth)
+
+  
+
 
   const navigate=useNavigate()
+  if(!userInfo){
+    navigate('/login')
+  }
   const fetchCourseDetails = async () => {
     try {
       let response = await axiosInstance.get(`/loadCourseDetails/${courseId}`);
@@ -69,6 +75,10 @@ function CourseDetails() {
     navigate(`/review/${courseId}`)
   }
 
+  useEffect(() => {
+    fetchCourseDetails();
+  }, [ratingSubmitted]);
+  
   return (
     <div>
       <section className="py-5 bg-slate-200" style={{minHeight: '100vh'}}>

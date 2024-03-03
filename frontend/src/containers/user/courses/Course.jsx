@@ -44,7 +44,7 @@ function CourseCard({_id,image,course,description,categoryName,rating}) {
   
     <div className="flex-1 overflow-hidden"> {/* Use flex-1 and overflow-hidden to control the description size */}
       <h5 className="fw-bolder">{course}</h5>
-      <span style={{fontSize:'14px'}}>{description.length > 15 ? `${description.slice(0, 15)}...` : description}</span>
+      <span style={{fontSize:'14px'}}>{description.length > 15 ? `${description?.slice(0, 15)}...` : description}</span>
 
       <div className='flex'>
           <StarRating
