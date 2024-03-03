@@ -71,13 +71,9 @@ const [dataArrived,setDataArrived]=useState(false)
   const {userInfo}=useSelector((state)=>state?.auth)
   const navigate=useNavigate()
   useEffect(()=>{
-     if(userInfo){
-
-       fetchPlans()
-     }else{
-      navigate('/login')
-     }
-  
+     
+    fetchPlans()
+  // console.log(currentPlan,'currentPlan')
   },[])
  const [plans,setPlans]=useState([])
   const fetchPlans=async()=>{
