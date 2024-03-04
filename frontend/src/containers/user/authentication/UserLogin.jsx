@@ -82,7 +82,7 @@ function UserLogin() {
         backgroundRepeat: 'no-repeat',  // Adjust as needed
       }}
     >
-      <div className="p-5 rounded w-36 md:w-45 sm:w-90  bg-white shadow-lg">
+      <div className="p-5 rounded w-28 md:w-45 sm:w-90  bg-white shadow-lg">
 
        
       <form onSubmit={submitHandler}>

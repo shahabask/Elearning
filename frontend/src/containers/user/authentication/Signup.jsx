@@ -108,7 +108,7 @@ useEffect(() => {
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',  
       }}  >
-      <div className="p-5 rounded w-36 md:w-45 sm:w-90 border shadow-lg bg-white">
+      <div className="p-5 rounded w-28 md:w-45 sm:w-90 border shadow-lg bg-white">
     <form onSubmit={submitHandler}>
       <motion.h3 initial={{opacity:0}} animate={{opacity:1}} transition={{duration:2}} className="text-center font-bold text-3xl mb-2">Sign Up</motion.h3>
       <div className="mb-3">
