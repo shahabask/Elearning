@@ -49,10 +49,16 @@ function OtpLoginEmail() {
     }
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="login-form">
+    <div className="flex justify-center items-center h-screen text-violet-800"
+    style={{
+      
+      backgroundImage: 'url("/images/login2.jpg")', 
+      backgroundSize: 'cover',  // Adjust as needed
+      backgroundRepeat: 'no-repeat',  // Adjust as needed
+    }}>
+      <div className="login-form bg-white">
         <div className="w-96 rounded-lg shadow-lg p-6 ">
-          <h1 className="text-3xl font-semibold text-black mb-4 text-center">
+          <h1 className="text-3xl font-semibold  mb-4 text-center">
             OTP Login with Email
           </h1>
           <form onSubmit={otpLoginEmailSubmitHandler}>

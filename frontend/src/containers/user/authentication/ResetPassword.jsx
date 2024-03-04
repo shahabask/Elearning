@@ -37,15 +37,21 @@ function ResetPassword() {
 
   
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen text-violet-800"
+    style={{
+      
+      backgroundImage: 'url("/images/login2.jpg")', 
+      backgroundSize: 'cover',  // Adjust as needed
+      backgroundRepeat: 'no-repeat',  // Adjust as needed
+    }}>
 
-        <div className="w-96 rounded-lg shadow-lg p-6 ">
+        <div className="w-96 rounded-lg shadow-lg p-6 bg-white">
           <h1 className="text-3xl font-semibold mb-4 text-center">
             Reset password
           </h1>
           <form onSubmit={resetPassword}>
             <div className="mb-4">
-              <label htmlFor="OTP" className="block text-gray-700">
+              <label htmlFor="OTP" className="block ">
                 New Password
               </label>
               <input

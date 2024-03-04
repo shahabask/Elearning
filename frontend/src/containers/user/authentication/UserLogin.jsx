@@ -136,7 +136,7 @@ function UserLogin() {
       </div>
       
     
-    <div className="text-center border-dotted border-2 border-gray-600 text-sm">
+    <div className="text-center border-dotted border-2 border-gray-600 mt-4 text-sm">
       
          <p>Email: {`shahabas@gmail.com`}</p>
          <p>Password: {`S@1212`}</p>
