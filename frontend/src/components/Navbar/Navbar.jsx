@@ -8,7 +8,7 @@ import axiosInstance from "../../containers/utils/axios";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt,faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-
+import { motion } from "framer-motion";
 
 
 const Navbar = () => {
@@ -93,7 +93,7 @@ const Navbar = () => {
   <FontAwesomeIcon icon={faSignOutAlt} />
   </button>
 </li>
-                <li>
+<motion.li className="ml-20" animate={{x:-70,scale:1}} initial={{scale:0}}  transition={{duration:1}}>
   <Link to="/profile" className="profile-icon">
     <img
       src="/images/aaron-burden-6jYoil2GhVk-unsplash.jpg"
@@ -105,7 +105,7 @@ const Navbar = () => {
       }}
     />
   </Link>
-</li>
+</motion.li>
               </>
             ) : (
               <>
