@@ -82,7 +82,7 @@ function UserLogin() {
         backgroundRepeat: 'no-repeat',  // Adjust as needed
       }}
     >
-      <div className="p-5 rounded w-30 md:w-45 sm:w-90  bg-white shadow-lg">
+      <div className="p-5 rounded w-36 md:w-45 sm:w-90  bg-white shadow-lg">
 
        
       <form onSubmit={submitHandler}>
@@ -135,9 +135,7 @@ function UserLogin() {
       </p>
       </div>
       
-      <div>
-        <span>Trail Data:</span>
-        </div>
+    
     <div className="text-center border-dotted border-2 border-gray-600 text-sm">
       
          <p>Email: {`shahabas@gmail.com`}</p>

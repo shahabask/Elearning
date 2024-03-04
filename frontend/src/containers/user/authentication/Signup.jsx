@@ -6,8 +6,8 @@ import { useDispatch,useSelector} from 'react-redux';
 import { toast } from 'react-toastify';
 import { setCredentials } from '../../../slices/userSlice/authSlice';
 import { useSignUpMutation } from '../../../slices/userSlice/userApiSlices'; 
-import axiosInstance from '../../utils/axios'
-import axios from 'axios';
+import { motion } from "framer-motion";
+
 function Signup() {
 
   const [firstName,setFirstName]=useState('')
@@ -16,7 +16,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword,setConfirmPassword]=useState('')
   const [formErrors,setFormErrors]=useState({})
- const [isSubmit,setIsSubmit]=useState(false)
+//  const [isSubmit,setIsSubmit]=useState(false)
 
  const [signUp]=useSignUpMutation()
 
@@ -101,16 +101,16 @@ useEffect(() => {
 
   return (
     <>
-      <div className="signup template d-flex justify-content-center align-items-center vh-100" 
+      <div className="signup template d-flex justify-content-center align-items-center vh-100 text-violet-800" 
       style={{
        
         backgroundImage: 'url("/images/login2.jpg")', 
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',  
       }}  >
-      <div className="p-5 rounded w-30 md:w-45 sm:w-90 border shadow-lg">
+      <div className="p-5 rounded w-36 md:w-45 sm:w-90 border shadow-lg bg-white">
     <form onSubmit={submitHandler}>
-      <h3 className="text-center">Sign Up</h3>
+      <motion.h3 initial={{opacity:0}} animate={{opacity:1}} transition={{duration:2}} className="text-center font-bold text-3xl mb-2">Sign Up</motion.h3>
       <div className="mb-3">
         <input type="text" value={firstName} placeholder="Enter first name" onChange={(e) => setFirstName(e.target.value)} className="form-control" />
         <p style={{ color: 'red' }}>{formErrors.firstName}</p>
@@ -133,10 +133,10 @@ useEffect(() => {
       </div>
 
       <div className="d-grid mt-2">
-        <button className="btn mb-3" style={{ background: "#ffc0cb" }}>Sign Up</button>
+        <button className="btn mb-3 font-semibold text-violet-100 bg-violet-900 hover:bg-violet-800" >Sign Up</button>
       </div>
-      <p className="text-center mt-2">
-        <Link to="/login" style={{ color: "black", textDecoration: 'none' }}>Sign In</Link>
+      <p className="text-center mt-2 text-sm">
+        <Link to="/login" style={{ textDecoration: 'none' }}>Sign In</Link>
       </p>
     </form>
   </div>
