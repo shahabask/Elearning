@@ -9,9 +9,9 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 const images = [
  
   
-  '/images/aaron-burden-6jYoil2GhVk-unsplash.jpg',
-  '/images/annie-spratt-QckxruozjRg-unsplash.jpg',
-  '/images/Executives at Davos Are Eager for Automation - Truthdig.jpeg',
+  '/images/login3.jpg',
+  '/images/login1.jpg',
+  '/images/home6.jpg',
   // Add more image URLs as needed
 ];
 
