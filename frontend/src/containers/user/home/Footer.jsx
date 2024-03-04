@@ -20,10 +20,10 @@ const Footer = () => {
     <motion.div
       initial={{ height: 0 }}
       whileInView={{ height: "auto" }}
-      // transition={{ duration: 1 }}
+      
       className="bg-Teal"
     >
-      <div className="px-5 py-1  grid md:grid-cols-3 overflow-none sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 place-items-start gap-4 text-black" style={{backgroundColor:'#FDF8EE',border:'1px solid grey'}}>
+      <div className="px-5 py-4  grid md:grid-cols-3 overflow-none sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 place-items-start gap-4 text-slate-700 bg-white" >
         <div >
           <div className="font-bold mb-6">SkillSync</div>
           <p className="text-sm leading-7">
@@ -46,23 +46,7 @@ const Footer = () => {
      
           </div>
         </div></div>
-        {/* <div >
-          <div className="font-bold mb-6">Company</div>
-          <div className="flex flex-col gap-4">
-          <Link to="/" className="text-sm hover:underline" style={{ color: 'black', textDecoration: 'none' }}>
-        Privacy Policy
-      </Link>
-      <Link to="/" className="text-sm hover:underline" style={{ color: 'black', textDecoration: 'none' }}>
-        Sitemap
-      </Link>
-      <Link to="/" className="text-sm hover:underline" style={{ color: 'black', textDecoration: 'none' }}>
-        Careers
-      </Link>
-      <Link to="/" className="text-sm hover:underline" style={{ color: 'black', textDecoration: 'none' }}>
-        Terms & Conditions
-      </Link>
-          </div>
-        </div> */}
+        
         <div className="w-full flex items-center justify-center">
         <div>
           <div className="font-bold mb-6">Follow us</div>

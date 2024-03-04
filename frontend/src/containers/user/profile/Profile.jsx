@@ -99,12 +99,12 @@ export default function Profile() {
      <div style={{ minHeight: "100vh"}} className="bg-slate-200">
        <div className="container ">
          <div className="row gutters row-with-padding ">
-           <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-             <div className="card h-100">
+         <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+             <div className="card h-100 bg-white">
                <div className="card-body rounded-lg shadow-lg">
                  <div className="account-settings">
-                   <div className="user-profile">
-                     <div className="user-avatar  with-border flex justify-center">
+                   <div className="user-profile ">
+                     <div className="user-avatar flex justify-center ">
                        <img
                          src={modifiedImagePath}
                          alt="Maxwell Admin"
@@ -113,33 +113,34 @@ export default function Profile() {
                      <h5 className="user-name font-semibold" style={{ textTransform: 'uppercase' }}>{userData?.firstName} {userData?.secondName}</h5>
                      {/* <h6 className="user-email">{userData?.secondName}</h6> */}
                    </div>
-                   <div className="centered-container">
-                     <div className="row-container cursor-pointer">
-                       <div className="colum" onClick={handleEditClick}>
-                         <i className="fas fa-edit pt-1" style={{color:"purple"}}></i>
-                         <span className="icon"style={{marginLeft:"10px"}}>Edit</span>
+                   <div className="centered-container ">
+                     <div className="row-container cursor-pointer w-full  ">
+                       <div className="flex my-2 hover:bg-violet-900 text-purple-900 hover:text-white rounded-lg p-2 " onClick={handleEditClick}>
+                         <i className="fas fa-edit pt-1 ml-6"></i>
+                         {/* <FaEdit className="pt-1 ml-6 w-4 h-4"/> */}
+                         <span className="icon ml-4 font-semibold">Edit</span>
                        </div>
-                       <div className="colum flex" onClick={handleWatchHistoryClick}>
-      <FontAwesomeIcon style={{ color: 'purple' }} icon={faHistory} className=" pt-1" />
-      <span className="icon" style={{ paddingLeft: '5px' }}>
+                       <div className=" flex my-2 hover:bg-violet-900 text-purple-900 hover:text-white rounded-lg p-2" onClick={handleWatchHistoryClick}>
+      <FontAwesomeIcon  icon={faHistory} className=" pt-1 ml-6  " />
+      <span className="icon ml-4 font-semibold">
       Watch History
       </span>
     </div>
-                        <div className="colum" onClick={handleQuizClick}>
-                        <i className="fas fa-certificate pt-1"style={{color:"purple"}}></i> 
-                       <span className="icon"style={{marginLeft:"10px"}}>
+                        <div className="flex my-2 hover:bg-violet-900 hover:text-white rounded-lg p-2 text-purple-900" onClick={handleQuizClick}>
+                        <i className="fas fa-certificate pt-1 ml-6  "></i> 
+                       <span className="icon ml-4 font-semibold">
                         Quiz
                        </span>
                        </div>
-                       <div className="colum" onClick={handleAssignmentClick}>
-  <FontAwesomeIcon style={{color:'purple'}}  icon={faPaperPlane} className="pt-1" />
-  <span className="icon" style={{ paddingLeft: "5px" }}>
+                       <div className="flex my-2 hover:bg-violet-900 hover:text-white rounded-lg p-2 text-purple-900" onClick={handleAssignmentClick}>
+  <FontAwesomeIcon  icon={faPaperPlane} className="pt-1 ml-6 " />
+  <span className="icon ml-4 font-semibold" >
     Assignment
   </span>
 </div>
-                       <div className="colum" onClick={handleMarkSheetClick}>
-                       <i className="fas fa-clipboard" style={{color:'purple'}}></i>
-                       <span className="icon"style={{marginLeft:"10px"}}>
+                       <div className="flex my-2 hover:bg-violet-900 hover:text-white rounded-lg p-2 text-purple-900" onClick={handleMarkSheetClick}>
+                       <i className="fas fa-clipboard ml-6 " ></i>
+                       <span className="icon ml-4 font-semibold">
                           MarkSheet
                        </span>
                        </div>

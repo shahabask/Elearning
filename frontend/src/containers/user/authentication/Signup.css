@@ -1,7 +1,7 @@
 
 .form_container {
     width: 30%;
-    border: 1px solid black;
+   
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Add your desired shadow values here */
 }
 .background-image {
