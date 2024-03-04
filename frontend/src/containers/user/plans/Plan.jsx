@@ -110,7 +110,7 @@ const [dataArrived,setDataArrived]=useState(false)
      setDataArrived(true)
     }
   } catch (error) {
-     toast.error('something happened')
+     toast.error(error?.message|| error?.data)
   }
   }
  
