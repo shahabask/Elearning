@@ -74,10 +74,10 @@ function UserLogin() {
   }
   return (
     <div
-      className="login template d-flex justify-content-center align-items-center vh-100 background-image"
+      className="login template d-flex justify-content-center align-items-center vh-100 text-violet-800"
       style={{
-       
-        backgroundImage: 'url("../../../../public/images/login2.jpg")', 
+        
+        backgroundImage: 'url("/images/login2.jpg")', 
         backgroundSize: 'cover',  // Adjust as needed
         backgroundRepeat: 'no-repeat',  // Adjust as needed
       }}
@@ -113,7 +113,7 @@ function UserLogin() {
           </div>
         
           <div className="d-grid">
-            <button className="py-2 rounded-lg mb-3 font-semibold text-violet-100 bg-violet-900 hover:bg-violet-800" style={{ }}>
+            <button className="py-2 rounded-lg mb-3 font-semibold text-violet-100 bg-violet-900 hover:bg-violet-800" >
               Sign In
             </button>
           </div>

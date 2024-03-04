@@ -104,7 +104,7 @@ useEffect(() => {
       <div className="signup template d-flex justify-content-center align-items-center vh-100" 
       style={{
        
-        backgroundImage: 'url("../../../../public/images/login2.jpg")', 
+        backgroundImage: 'url("/images/login2.jpg")', 
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat',  
       }}  >
