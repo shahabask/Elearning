@@ -93,7 +93,7 @@ const Navbar = () => {
   <FontAwesomeIcon icon={faSignOutAlt} />
   </button>
 </li>
-<motion.li className="ml-20" animate={{x:-70,scale:1}} initial={{scale:0}}  transition={{duration:1}}>
+<motion.li className="ml-20" animate={{x:-70,scale:1}} initial={{scale:0}}  transition={{duration:1.8}}>
   <Link to="/profile" className="profile-icon">
     <img
       src="/images/aaron-burden-6jYoil2GhVk-unsplash.jpg"
