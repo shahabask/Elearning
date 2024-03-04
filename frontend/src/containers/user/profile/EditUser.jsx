@@ -66,11 +66,11 @@ function EditUser({ userData ,conformUpdation}) {
   return (
     <>
       <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-        <div className="card h-100">
+        <div className="card h-100 bg-white text-violet-800">
           <div className="card-body">
             <div className="row gutters">
               <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                <h6 className="mb-3 text-primary">Personal Details</h6>
+                <h6 className="mb-3 font-semibold">Personal Details</h6>
               </div>
               <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                 <div className="form-group">
@@ -131,7 +131,7 @@ function EditUser({ userData ,conformUpdation}) {
                       className="image-preview"
                     />
                   )}
-                  <div className="remove-image" onClick={handleRemoveImage}>
+                  <div className="remove-image text-red-600" onClick={handleRemoveImage}>
                     <FaTrash />
                   </div>
                 </div>

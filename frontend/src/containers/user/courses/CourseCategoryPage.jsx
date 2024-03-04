@@ -112,7 +112,7 @@ function CourseCategoryPage() {
       <div className="text-center my-4">
         <h1 className="text-3xl font-semibold mb-4">Top Courses</h1>
 
-        <div className="flex items-center justify-center space-x-4 mb-4">
+        <div className="flex items-center justify-center space-x-4 mb-4 text-sm">
           {/* Search Bar */}
           <div className="relative">
             <input

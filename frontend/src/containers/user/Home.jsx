@@ -40,7 +40,7 @@ function Home() {
 return (
   <ThemeProvider theme={defaultTheme}>
   <CssBaseline />
-  <div className="home-background" > {/* Apply the CSS class here */}
+  <div className="home-background bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200" > {/* Apply the CSS class here */}
   <main>
     {/* Hero unit */}
     <Banner />
