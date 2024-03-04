@@ -57,8 +57,8 @@ function VerifyOtp() {
 
             <button
   type="submit"
-  style={{ backgroundColor: '#ffc0cb', color: 'dark-black', border: 'none', borderRadius: '0.25rem', padding: '0.625rem 1.25rem',  marginTop: '1rem', transition: 'background-color 0.3s ease', }}
-  className="btn-send-otp"
+  style={{ border: 'none', borderRadius: '0.25rem', padding: '0.625rem 1.25rem',  marginTop: '1rem', transition: 'background-color 0.3s ease', }}
+  className="btn-send-otp font-semibold text-violet-100 bg-violet-900 hover:bg-violet-800"
 >
               Verify OTP
             </button>

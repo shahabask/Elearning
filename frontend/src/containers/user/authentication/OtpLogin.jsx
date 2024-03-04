@@ -68,7 +68,7 @@ function OtpLogin() {
                     className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500 mr-2"
                   />
                   {/* <button className='text-blue'>Resend</button> */}
-                  <button className="text-blue-500 mt-2" >
+                  <button className=" mt-2" >
                     Resend
                   </button>
                 </div>
@@ -76,8 +76,8 @@ function OtpLogin() {
   
               <button
     type="submit"
-    style={{ backgroundColor: '#ffc0cb', color: 'dark-black', border: 'none', borderRadius: '0.25rem', padding: '0.625rem 1.25rem',  marginTop: '1rem', transition: 'background-color 0.3s ease', }}
-    className="btn-send-otp"
+    style={{ border: 'none', borderRadius: '0.25rem', padding: '0.625rem 1.25rem',  marginTop: '1rem', transition: 'background-color 0.3s ease', }}
+    className="btn-send-otp font-semibold text-violet-100 bg-violet-900 hover:bg-violet-800"
   >
                 Verify OTP
               </button>
