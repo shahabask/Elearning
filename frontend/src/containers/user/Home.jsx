@@ -136,8 +136,8 @@ return (
           style={{ width: 48, height: 48, marginRight: 8, borderRadius: '10%'}}
         />
       </div>
-      <Typography variant="h6">Get ready for the career</Typography>
-      <Typography variant="body2">Be prepared for having a high package job</Typography>
+      <Typography variant="h6">Want to join lives ?</Typography>
+      <Typography variant="body2">Check for the available slot</Typography>
     </div>
 
     <div className=' hover:cursor-pointer hover:text-gray-300'
