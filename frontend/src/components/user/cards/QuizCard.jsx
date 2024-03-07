@@ -27,7 +27,7 @@ const handleAttendQuiz=(quizId)=>{
           <span className="fw-bold" >Status</span>: Ongoing
         </div> */}
       </Card.Text>
-      <Button variant="dark" style={{width:"100%",color:'white',backgroundColor:'grey'}} onClick={()=>handleAttendQuiz(quizData?._id)}>Attend</Button>
+      <Button variant="dark" className='bg-purple-900' style={{width:"100%",color:'white'}} onClick={()=>handleAttendQuiz(quizData?._id)}>Attend</Button>
     </Card.Body>
   </Card>
   )
