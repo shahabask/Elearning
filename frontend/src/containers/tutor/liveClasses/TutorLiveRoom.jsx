@@ -30,8 +30,8 @@ function TutorLiveRoom() {
   
 
   // Generate Kit Token for authentication
-  const appID = 1795365148;
-  const serverSecret = '56de0e4dac7e86851b37e9584ffee39a';
+  const appID = 793445047;
+  const serverSecret = '345211026ca45fcff6e39ab9d88191e1';
   const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
     appID,
     serverSecret,

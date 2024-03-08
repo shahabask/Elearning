@@ -10,7 +10,7 @@ const handleAttendQuiz=(quizId)=>{
 }
 
   return (
-    <Card style={{ width: '18rem', backgroundColor:'#edf7f7'}}>
+    <Card style={{ width: '18rem', backgroundColor:'white'}}>
     <Card.Body>
       <Card.Title className="fw-bold">{quizData?.name}</Card.Title>
       <Card.Text>
@@ -27,7 +27,7 @@ const handleAttendQuiz=(quizId)=>{
           <span className="fw-bold" >Status</span>: Ongoing
         </div> */}
       </Card.Text>
-      <Button variant="dark" className='bg-purple-900' style={{width:"100%",color:'white'}} onClick={()=>handleAttendQuiz(quizData?._id)}>Attend</Button>
+      <Button variant="dark" className='bg-purple-900 hover:bg-purple-950' style={{width:"100%",color:'white'}} onClick={()=>handleAttendQuiz(quizData?._id)}>Attend</Button>
     </Card.Body>
   </Card>
   )
