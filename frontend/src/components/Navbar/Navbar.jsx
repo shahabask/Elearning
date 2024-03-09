@@ -13,13 +13,11 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentActive, setCurrentActive] = useState(null);
   const { userInfo } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
-
-  const isHomeRoute = location.pathname === '/'
+  
   const navLinks = [
     { id: 1, text: 'Home', path: '/' },
     { id: 4, text: 'Lives', path: '/lives' },
@@ -27,7 +25,9 @@ const Navbar = () => {
     { id: 2, text: 'Plans', path: '/plans' },
     
   ];
-
+  
+  const currentLink=navLinks.filter((item)=>item?.path===location?.pathname)
+  const [currentActive, setCurrentActive] = useState(currentLink[0]?currentLink[0].id:0);
   const handleMobileMenuClick = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -74,15 +74,15 @@ const Navbar = () => {
         </a>
         <div>
           <ul id="navbar" className={mobileMenuOpen ? 'active' : ''}>
-            {navLinks.map((link, index) => (
-              <li key={link.id}>
-                <Link
-                  to={link.path}
-                  className={index === currentActive ? 'active-link' : ''}
-                >
-                  {link.text}
-                </Link>
-              </li>
+            {navLinks.map((link) => (
+               <li key={link.id} onClick={()=>handleClick(link.id)}>
+               <Link
+                 to={link.path}
+                 className={link.id === currentActive ? 'active-link' : ''}
+               >
+                 {link.text}
+               </Link>
+             </li>
             ))}
             {userInfo ? (
               <>

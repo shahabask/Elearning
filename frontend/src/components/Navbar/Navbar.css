@@ -49,24 +49,24 @@
 #navbar li a:hover {
   color: #9b47c4;
 }
-
 #navbar li a.active-link {
-  color: #b881d4;
-  /* Add any other styles for the active link */
-
-  /* Underline effect */
+   
+   
   position: relative;
 }
 
 #navbar li a.active-link::after {
   content: "";
-  width: 100%; /* Set the width to 100% to span the entire link text */
+  width: 100%;
   height: 5px;
-  background: #4d2c5e;
+  background: transparent;
   position: absolute;
-  bottom: -10px;
-  left: 0; 
+  bottom: 0;
+  left: 0;
+  
   border-radius: 50px;
+  border-bottom: 5px solid #4d2c5e;
+  
 }
 
 #mobile {
