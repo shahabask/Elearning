@@ -17,7 +17,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   const navLinks = [
     { id: 1, text: 'Home', path: '/' },
     { id: 4, text: 'Lives', path: '/lives' },
@@ -42,7 +42,7 @@ const Navbar = () => {
   const logoutFunction = async () => {
     try {
       await axiosInstance.post('/logout');
-    
+      setCurrentActive(0)
       dispatch(logout());
    
       navigate('/login');
@@ -94,7 +94,7 @@ const Navbar = () => {
   </button>
 </li>
 <motion.li className="ml-20" animate={{x:-70,scale:1}} initial={{scale:0}}  transition={{duration:1.8}}>
-  <Link to="/profile" className="profile-icon">
+  <Link to="/profile" className="profile-icon" onClick={()=>setCurrentActive(0)}>
     <img
       src="/images/aaron-burden-6jYoil2GhVk-unsplash.jpg"
       alt="User Profile"
@@ -110,7 +110,7 @@ const Navbar = () => {
             ) : (
               <>
               <li>
-                <Link to="/login"> <FontAwesomeIcon icon={faSignInAlt} /></Link>
+                <Link to="/login" onClick={()=>setCurrentActive(0)}> <FontAwesomeIcon icon={faSignInAlt} /></Link>
               </li>
              
               </>
