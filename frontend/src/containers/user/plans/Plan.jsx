@@ -154,7 +154,7 @@ const [dataArrived,setDataArrived]=useState(false)
   ))}
 </ul>
         <p className="text-gray-600 mb-2">
-          Purchased Mode: <span className="font-semibold text-purple-600">{subscription[0].mode}</span>
+          Purchased Mode: <span className="font-semibold text-purple-600">{subscription[0]?.mode}</span>
         </p>
         <p className="text-gray-600 mb-4">
           End Date: <span className="font-semibold text-purple-600">{endDate}</span>
@@ -162,7 +162,7 @@ const [dataArrived,setDataArrived]=useState(false)
         <Link to='/courses' style={{ textDecoration: 'none' }} className="block w-full text-center bg-gray-600 text-white py-3 rounded-md hover:bg-purple-700">
           Go to Watch Video
         </Link>
-    {subscription[0].mode=='Premium' ?'':  <animated.button
+    {subscription[0]?.mode=='Premium' ?'':  <animated.button
           style={upgradeButtonSpring}
           className="mt-4 bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-md transition-all duration-300 focus:outline-none"
           onClick={() => handleUpgradeClick()}

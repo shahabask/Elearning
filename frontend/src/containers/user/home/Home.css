@@ -2,5 +2,14 @@
     /* Replace with the path to your background image */
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    min-height: 72vh;
+  }
+
+  .feature {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
   }

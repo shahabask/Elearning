@@ -25,7 +25,7 @@ const ImageCarousel = () => {
       </div>
   <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
     {images.map((image, index) => (
-      <div key={index}>
+      <div key={index} className='border-2 border-slate-700'>
         <img
           src={image}
           alt={`Image ${index + 1}`}

@@ -44,7 +44,7 @@ function AddLiveModal({ isOpen,handleCloseModal,handleCreateSession,subjects }) 
     setValidationError('');
     return true;
   };
-
+  
   const handleCreateSessionClick = () => {
     if (validateForm()) {
       const sessionData = {
