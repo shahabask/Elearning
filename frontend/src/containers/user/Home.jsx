@@ -12,9 +12,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-// const cards = [1, 2, 3];
-
-// TODO remove, this demo shouldn't need to reset the theme.
 
 
 function Home() {
