@@ -57,7 +57,7 @@ return (
             e.currentTarget.style.backgroundPosition = '0% 0';
             e.currentTarget.style.color = 'black'; 
           }}>
-            <div className="feature bg-violet-900 bg-gradient text-white rounded-3 mb-3">
+            <div className="feature bg-violet-950 bg-gradient text-white rounded-3 mb-3">
               <BiBookOpen />
             </div>
             <h2 className="h4 fw-bolder p-2">Ready to attend quiz ?</h2>
@@ -86,7 +86,7 @@ return (
               e.currentTarget.style.color = 'black'; 
             }}
           >
-            <div className="feature bg-violet-900 bg-gradient text-white rounded-3 mb-3">
+            <div className="feature bg-violet-950 bg-gradient text-white rounded-3 mb-3">
               <BiRadioCircle />
             </div>
             <h2 className="h4 fw-bolder p-2">Want to join lives ?</h2>
@@ -114,7 +114,7 @@ Welcome to our live section, where learning comes to life! Join expert tutors in
             e.currentTarget.style.backgroundPosition = '0% 0';
             e.currentTarget.style.color = 'black'; 
           }}>
-            <div className="feature bg-violet-900 bg-gradient text-white rounded-3 mb-3">
+            <div className="feature bg-violet-950 bg-gradient text-white rounded-3 mb-3">
               <BiBell />
             </div>
             <h2 className="h4 fw-bolder p-2">Want to be premium Member ?</h2>
