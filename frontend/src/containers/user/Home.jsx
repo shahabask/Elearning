@@ -30,9 +30,6 @@ return (
     {/* Hero unit */}
     <Banner />
 
-
-
- 
   </main>
   </div>
   <section className=" border-bottom container  bg-slate-200  lg:pl-20" id="features">
