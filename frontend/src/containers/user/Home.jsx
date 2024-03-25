@@ -2,13 +2,12 @@
 
 import CssBaseline from '@mui/material/CssBaseline';
 
-// import Link from '@mui/material/Link';
-import { createTheme, } from '@mui/material/styles';
+
 // import Footer from './home/Footer';
 import { BiBookOpen,BiRadioCircle, BiBell } from 'react-icons/bi';
 import Banner from './home/Banner';
 import './home/Home.css'
-import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 
